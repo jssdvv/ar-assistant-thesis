@@ -31,7 +31,7 @@
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
 % ║   Default options for the predefined class right before the type of docu-    ║
-% ║   ment and its paper size format.                                            ║
+% ║   ment(report) and its paper size format.                                    ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
@@ -41,8 +41,65 @@
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║  Packages required by the ara class document structure arrangement.          ║
+% ║   Packages required by the ara class document structure arrangement.         ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish]{babel}
 \RequirePackage{layout}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Preamble macro's parameters for cover page information. Please visit the   ║
+% ║   documentation for more information:                                        ║
+% ║   www.overleaf.com/learn/latex/How_TeX_macros_actually_work%3A_Part_4        ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+\def\degree#1{\gdef\@degree{#1}}
+\def\director#1{\gdef\@director{#1}}
+\def\directordegree#1{\gdef\@directordegree{#1}}
+\def\codirector#1{\gdef\@codirector{#1}}
+\def\codirectordegree#1{\gdef\@codirectordegree{#1}}
+\def\institution#1{\gdef\@institution{#1}}
+\def\faculty#1{\gdef\@faculty{#1}}
+\def\school#1{\gdef\@school{#1}}
+\def\academicprogram#1{\gdef\@academicprogram{#1}}
+\def\city#1{\gdef\@city{#1}}
+\def\actualyear#1{\gdef\@actualyear{#1}}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║ ░█████╗░░█████╗░██╗░░░██╗███████╗██████╗░░░██████╗░░█████╗░░██████╗░███████╗ ║
+% ║ ██╔══██╗██╔══██╗██║░░░██║██╔════╝██╔══██╗░░██╔══██╗██╔══██╗██╔════╝░██╔════╝ ║
+% ║ ██║░░╚═╝██║░░██║╚██╗░██╔╝█████╗░░██████╔╝░░██████╔╝███████║██║░░██╗░█████╗░░ ║
+% ║ ██║░░██╗██║░░██║░╚████╔╝░██╔══╝░░██╔══██╗░░██╔═══╝░██╔══██║██║░░╚██╗██╔══╝░░ ║
+% ║ ╚█████╔╝╚█████╔╝░░╚██╔╝░░███████╗██║░░██║░░██║░░░░░██║░░██║╚██████╔╝███████╗ ║
+% ║ ░╚════╝░░╚════╝░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝░░╚═╝░░░░░╚═╝░░╚═╝░╚═════╝░╚══════╝ ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+\newcommand{\coverpage}{
+    \thispagestyle{empty}
+    \begin{center}
+        {\@title \par}
+        \vfill
+        {\@author \par}
+        \vfill
+        {Trabajo de Grado Para Optar al Título de \@degree}
+        \vfill
+        {Director \par}
+        {\@director \par}
+        {\@directordegree \par}
+        \vfill
+        {Codirector \par}
+        {\@codirector \par}
+        {\@codirectordegree \par}
+        \vfill
+        {\@institution \par}
+        {Facultad de \@faculty \par}
+        {Escuela de \@school \par}
+        {\@academicprogram \par}
+        {\@city \par}
+        {\@actualyear}
+    \end{center}
+}
