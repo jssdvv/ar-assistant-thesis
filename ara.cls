@@ -48,6 +48,31 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish]{babel}
 \RequirePackage{layout}
+\RequirePackage{calc}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Margins definitions. Please visit the documentation for more informa-      ║
+% ║   tion:                                                                      ║
+% ║   www.overleaf.com/learn/latex/Lengths_in_LaTeX                              ║                                           ║
+% ║   www.overleaf.com/learn/latex/Page_size_and_margins                         ║                                           ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+% Horizontal
+\setlength{\hoffset}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\setlength{\textwidth}{\paperwidth-2in}
+\setlength{\marginparsep}{0in}
+\setlength{\marginparwidth}{0in}
+
+% Vertical
+\setlength{\voffset}{0in}
+\setlength{\topmargin}{-0.5in}
+\setlength{\footskip}{0.5in}
+\setlength{\headsep}{-\topmargin-\headheight}
+\setlength{\textheight}{\paperheight-2in}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
