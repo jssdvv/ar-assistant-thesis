@@ -6,3 +6,4 @@
 *.toc
 *.fdb_latexmk
 *.synctex.gz
+build
