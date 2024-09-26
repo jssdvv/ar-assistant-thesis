@@ -7,7 +7,41 @@
 \usepackage[T1]{fontenc}
 \usepackage{mathptmx}
 
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Package for spacing in lines.                                              ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
 \usepackage{setspace}
+
+\doublespacing
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Package for drawing vector graphics.                                       ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
 \usepackage{tikz}
-\usepackage{lipsum}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Package for setting the footers and headers.                               ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
 \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{APLICATIVO DE REALIDAD AUMENTADA PARA MANTENIMIENTO}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[L]{APLICATIVO DE REALIDAD AUMENTADA PARA MANTENIMIENTO}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
