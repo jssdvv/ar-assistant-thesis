@@ -66,6 +66,9 @@
 \setlength{\marginparsep}{0in}
 \setlength{\marginparwidth}{0in}
 
+% Identation
+\setlength{\parindent}{0.5in}
+
 % Vertical
 \setlength{\voffset}{0in}
 \setlength{\topmargin}{-0.5in}
@@ -100,7 +103,6 @@
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
 \newcommand{\coverpage}{
-    \thispagestyle{empty}
     \begin{center}
         {\@title \par}
         \vfill
