@@ -4,6 +4,10 @@
 *.log
 *.out
 *.toc
+*.bbl
+*.bcf
+*.blg
+*.run.xml
 *.fdb_latexmk
 *.synctex.gz
 build
