@@ -35,9 +35,9 @@
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{report}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-\LoadClass[12pt,letterpaper]{report}
+\LoadClass[12pt,letterpaper]{article}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
