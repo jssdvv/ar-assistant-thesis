@@ -55,3 +55,59 @@
 \usepackage[style=apa]{biblatex}
 \usepackage{csquotes}
 \addbibresource{ara.bib}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║   Package for customize chapters and sections. Please visit the documenta-   ║
+% ║   for more infomation:                                                       ║
+% ║   www.overleaf.com/learn/latex/Sections_and_chapters                         ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+\usepackage{titlesec}
+%\usepackage{showframe} To visualize the margins frames of the sheet
+
+% Numbering paragraphs
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\renewcommand{\thesubparagraph}{\theparagraph.\arabic{subparagraph}}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% Formatting title levels
+\titleformat{\section}[hang]{
+    \normalfont
+    \centering
+    \bfseries
+}{\thesection.}{0.5em}{}
+
+\titleformat{\subsection}[hang]{
+    \normalfont
+    \bfseries
+}{\thesubsection.}{0.5em}{}
+
+\titleformat{\subsubsection}[hang]{
+    \normalfont
+    \bfseries
+    \itshape
+}{\thesubsubsection.}{0.5em}{}
+
+\titleformat{\paragraph}[runin]{
+    \normalfont
+    \bfseries
+}{\theparagraph.}{0.5em}{}
+
+\titleformat{\subparagraph}[runin]{
+    \normalfont
+    \bfseries
+    \itshape
+}{\thesubparagraph.}{0.5em}{}
+
+% Titles' spacings
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titlespacing{\paragraph}{0.5in}{*0}{0.5em}
+\titlespacing{\subparagraph}{0.5in}{*0}{0.5em}
