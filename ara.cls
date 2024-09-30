@@ -47,6 +47,7 @@
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish]{babel}
+\RequirePackage{enumitem}
 \RequirePackage{calc}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -68,6 +69,7 @@
 
 % Identation
 \setlength{\parindent}{0.5in}
+\setlist[itemize]{leftmargin=0.5in}
 
 % Vertical
 \setlength{\voffset}{0in}
@@ -125,4 +127,5 @@
         {\@city \par}
         {\@actualyear}
     \end{center}
+    \clearpage
 }
