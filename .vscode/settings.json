@@ -1,0 +1,17 @@
+{
+    "cSpell.import": ["@cspell/dict-es-es/cspell-ext.json"],
+    "cSpell.language": "es,en,es-ES",
+    "cSpell.words": [
+        "maintitle"
+    ],
+    "cSpell.ignorePaths": [
+        "ara.sty",
+        "ara.cls",
+        "ara.bib",
+        "template.bib"
+    ],
+    "cSpell.ignoreRegExpList": [
+        "\\\\textcite(?:\\[[^\\]]*\\])?\\{[^}]*\\}",
+        "\\\\parencite(?:\\[[^\\]]*\\])?\\{[^}]*\\}"
+    ]
+}
