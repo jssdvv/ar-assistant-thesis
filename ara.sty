@@ -1,83 +1,90 @@
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Packages for setting Times New Roman font.                                 ║
+% ║                                   PACKAGES                                   ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\usepackage[T1]{fontenc}
-\usepackage{mathptmx}
+% FONTS
+
+\usepackage[T1]{fontenc}        % European Encoding
+\usepackage{newtxtext}          % Roman Text Font Like
+\usepackage{newtxmath}          % Roman Math Font Like
+
+% FORMATTING
+
+\usepackage{setspace}           % Spacings
+\usepackage{tocloft}            % Sections
+\usepackage{caption}            % Captions
+\usepackage{array}              % Columns
+%\usepackage{showframe}         % Margins
+
+% FIGURES
+
+\usepackage{longtable}          % Multi-Page Tables
+\usepackage{multirow}           % Multi-Row Cells
+\usepackage{booktabs}           % Tables Optimization
+\usepackage{threeparttablex}    % Caption And Notes
+
+\usepackage{tikz}               % Vectors 
+\usetikzlibrary{%
+    positioning,%
+    shapes.multipart,%
+    arrows.meta,%
+    decorations.pathmorphing,%
+    backgrounds,positioning,%
+    fit,petri%
+}
+
+% REFERENCES
+
+\usepackage[                    % Hyperlinks
+    hidelinks,
+    bookmarks       = true,
+    bookmarksopen   = true,
+    bookmarksdepth  = 5,
+    pdfpagemode     = UseOutlines
+]{hyperref}
+
+\usepackage[                    % References
+    style           = apa,
+    backend         = biber,
+    babel           = other,
+    autolang        = other
+]{biblatex}
+
+\usepackage{csquotes}           % Quotes
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Package for spacing in lines.                                              ║
+% ║                                   CITATION                                   ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\usepackage{setspace}
+\addbibresource{ara.bib}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                     TEXT                                     ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
 
 \doublespacing
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Package for drawing vector graphics.                                       ║
+% ║                                    TITLES                                    ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\usepackage{tikz}
+% Level 1: \section
+% Level 2: \subsection
+% Level 3: \subsubsection
+% Level 4: \paragraph
+% Level 5: \subparagraph
 
-% ╔══════════════════════════════════════════════════════════════════════════════╗
-% ║                                                                              ║
-% ║   Package for setting the footers and headers.                               ║
-% ║                                                                              ║
-% ╚══════════════════════════════════════════════════════════════════════════════╝
+% FORMATTING
 
-\usepackage{fancyhdr}
-
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{APLICATIVO DE REALIDAD AUMENTADA PARA MANTENIMIENTO}
-\fancyhead[R]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
-
-\fancypagestyle{plain}{
-    \fancyhf{}
-    \fancyhead[L]{APLICATIVO DE REALIDAD AUMENTADA PARA MANTENIMIENTO}
-    \fancyhead[R]{\thepage}
-    \renewcommand{\headrulewidth}{0pt}
-}
-
-% ╔══════════════════════════════════════════════════════════════════════════════╗
-% ║                                                                              ║
-% ║   Package for setting the bibliography in APA style.                         ║
-% ║                                                                              ║
-% ╚══════════════════════════════════════════════════════════════════════════════╝
-
-\usepackage[style=apa,natbib]{biblatex}
-\usepackage{csquotes}
-\addbibresource{ara.bib}
-
-% ╔══════════════════════════════════════════════════════════════════════════════╗
-% ║                                                                              ║
-% ║   Package for customize chapters and sections. Please visit the documenta-   ║
-% ║   for more infomation:                                                       ║
-% ║   www.overleaf.com/learn/latex/Sections_and_chapters                         ║
-% ║                                                                              ║
-% ╚══════════════════════════════════════════════════════════════════════════════╝
-
-\usepackage{titlesec}
-%\usepackage{showframe} %To visualize the margins frames of the sheet
-
-% Numbering paragraphs
-\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-
-\renewcommand{\thesubparagraph}{\theparagraph.\arabic{subparagraph}}
-\setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
-
-% Formatting title levels
-\titleformat{\section}[hang]{
+\titleformat{\section}[block]{
     \normalfont
     \centering
     \bfseries
@@ -105,66 +112,153 @@
     \itshape
 }{\thesubparagraph.}{0.5em}{}
 
-% Titles' spacings
-\titlespacing{\section}{0pt}{*0}{\baselineskip}
-\titlespacing{\subsection}{0pt}{*0}{*0}
-\titlespacing{\subsubsection}{0pt}{*0}{*0}
-\titlespacing{\paragraph}{0.5in}{*0}{1ex}
-\titlespacing{\subparagraph}{0.5in}{*0}{1ex}
+% NUMBERING
+
+\renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+\renewcommand{\thesubparagraph}{\theparagraph.\arabic{subparagraph}}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Package for customize chapters and sections. Please visit the documenta-   ║
-% ║   for more infomation:                                                       ║
-% ║   www.overleaf.com/learn/latex/Sections_and_chapters                         ║
+% ║                                    TABLES                                    ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\usepackage{tocloft}
+\captionsetup[table]{
+    format=plain,
+    labelfont=bf,
+    textfont=it,
+    labelsep=newline,
+    font={normalsize,stretch=2},
+    justification=raggedright,
+    singlelinecheck=false
+}
 
-% Indentation inside the table of contents
+% NAME
+
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\renewcommand{\cfttabpresnum}{\tablename~}
+\renewcommand{\cfttabaftersnum}{.}
+
+% IDENTATION
+
+\setlength{\cfttabnumwidth}{1.5cm}
+\setlength{\cfttabindent}{0pt}
+
+% COLUMNS
+
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                   FIGURES                                    ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+\captionsetup[figure]{
+    format=plain,
+    labelfont=bf,
+    textfont=it,
+    labelsep=newline,
+    font={normalsize,stretch=2},
+    justification=raggedright,
+    singlelinecheck=false
+}
+
+% NAME
+
+\addto\captionsspanish{\renewcommand{\figurename}{Figura}}
+\renewcommand{\cftfigpresnum}{\figurename~}
+\renewcommand{\cftfigaftersnum}{.}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                    LISTS                                     ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+% LADERS (Dots)
+\renewcommand{\cftsecleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{1}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                              TABLE OF CONTENTS                               ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+% FONT WEIGHT
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+\renewcommand{\cftparapagefont}{\normalfont}
+\renewcommand{\cftsubparapagefont}{\normalfont}
+
+% Font Weight In TOC
+\renewcommand{\cftsecfont}{\normalfont}
+
+% INDENTATION (Including the numbering)
 \setlength{\cftsecindent}{0pt}
 \setlength{\cftsubsecindent}{0pt}
 \setlength{\cftsubsubsecindent}{0pt}
 \setlength{\cftparaindent}{0pt}
 \setlength{\cftsubparaindent}{0pt}
 
-% Change titles of lists
+% SPACING (Between numbering and title) (Increase 0.8em per each)
+\setlength{\cftsecnumwidth}{1.5em}
+\setlength{\cftsubsecnumwidth}{2.3em}
+\setlength{\cftsubsubsecnumwidth}{3.1em}
+\setlength{\cftparanumwidth}{3.9em}
+\setlength{\cftsubparanumwidth}{4.7em}
+
+% Extra Space After Section Skip (vertical)
+\setlength{\cftbeforesecskip}{0pt}
+
+% NAME
 \addto\captionsspanish{
-    \renewcommand{\contentsname}{
-        \hfill
-        \bfseries\normalsize{Tabla de contenido}
-        \hfill
-    }
-    \renewcommand{\listfigurename}{
-        \hfill
-        \bfseries\normalsize{Lista de figuras}
-        \hfill
-    }
-    \renewcommand{\listtablename}{
-        \hfill
-        \bfseries\normalsize{Lista de tablas}
-        \hfill
-    }
+    \renewcommand{\contentsname}{\hfill\bfseries\normalsize{Tabla de contenido}\hfill}
 }
-
-% Add header after lists' titles
 \addtocontents{toc}{\hfill\bfseries\normalsize{Pág.}\par}
-\addtocontents{lot}{\hfill\bfseries\normalsize{Pág.}\par}
-\addtocontents{lof}{\hfill\bfseries\normalsize{Pág.}\par}
 
-% Add missing period after number
+% Period After Number
 \renewcommand{\cftsecaftersnum}{.}
 \renewcommand{\cftsubsecaftersnum}{.}
 \renewcommand{\cftsubsubsecaftersnum}{.}
 \renewcommand{\cftparaaftersnum}{.}
 \renewcommand{\cftsubparaaftersnum}{.}
 
-% Remove bold style of section's titles
-\renewcommand{\cftsecfont}{\normalfont}
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                LIST OF TABLES                                ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
 
-% Add section's laders with periods
-\renewcommand{\cftsecleader}{\normalfont\cftdotfill{\cftdotsep}}
+\addto\captionsspanish{
+    \renewcommand{\listtablename}{\hfill\bfseries\normalsize{Lista de tablas}\hfill}
+}
+\addtocontents{lot}{\hfill\bfseries\normalsize{Pág.}\par}
 
-% Remove extra space after section skip in table of contents
-\setlength{\cftbeforesecskip}{0pt}
+% IDENTATION
+
+\setlength{\cfttabindent}{0pt}
+\setlength{\cfttabnumwidth}{3.5em}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                LIST OF FIGURES                               ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+\addto\captionsspanish{
+    \renewcommand{\listfigurename}{\hfill\bfseries\normalsize{Lista de figuras}\hfill}
+}
+\addtocontents{lof}{\hfill\bfseries\normalsize{Pág.}\par}
+
+% IDENTATION
+
+\setlength{\cftfigindent}{0pt}
+\setlength{\cftfignumwidth}{4.5em}

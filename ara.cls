@@ -26,7 +26,7 @@
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ara}[2024/09/24 v1.0 ara APA class]
+\ProvidesClass{ara}[2024/09/24 v1.1 ara APA class]
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
@@ -47,56 +47,112 @@
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[spanish]{babel}
-\RequirePackage{enumitem}
-\RequirePackage{calc}
+\RequirePackage{etoolbox}                   % Logic Conditions
+\RequirePackage{fancyhdr}                   % Headers
+\RequirePackage{titlesec}                   % Titles
+\RequirePackage{enumitem}                   % Lists
+\RequirePackage{fancyvrb,fvextra}           % Advanced Verbatim
+\RequirePackage{tocloft}                    
+\RequirePackage{calc}                       
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Margins definitions. Please visit the documentation for more informa-      ║
-% ║   tion:                                                                      ║
-% ║   www.overleaf.com/learn/latex/Lengths_in_LaTeX                              ║                                           ║
-% ║   www.overleaf.com/learn/latex/Page_size_and_margins                         ║                                           ║
+% ║                                   MARGINS                                    ║
+% ║                                                                              ║
+% ║   https://www.overleaf.com/learn/latex/Lengths_in_LaTeX                      ║
+% ║   https://www.overleaf.com/learn/latex/Page_size_and_margins                 ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-% Horizontal
-\setlength{\hoffset}{0in}
-\setlength{\oddsidemargin}{0in}
-\setlength{\evensidemargin}{0in}
-\setlength{\textwidth}{\paperwidth-2in}
-\setlength{\marginparsep}{0in}
-\setlength{\marginparwidth}{0in}
+% GENERAL
 
-% Identation
+\setlength{\hoffset}{0in}                   % Initial Horizontal Offset
+\setlength{\voffset}{0in}                   % Initial Vertical Offset
+
+% TEXT
+
+\setlength{\oddsidemargin}{0in}             % Left Side Margin Odd Page
+\setlength{\evensidemargin}{0in}            % Left Side Margin Even Page
+\setlength{\textwidth}{\paperwidth-2in}     % Text Area Width
+\setlength{\textheight}{\paperheight-2in}   % Text Area Height
+
+% NOTES
+
+\setlength{\marginparwidth}{0in}            % Notes Area Width
+\setlength{\marginparsep}{0in}              % Left Margin And Right Text Area Margin
+
+% HEADER
+
+\setlength{\headheight}{12pt}               % Header Area Height
+\setlength{\topmargin}{-0.5in}              % Top Margin And Vertical Offset Separation
+\setlength{\headsep}{-\topmargin-\headheight}
+
+% FOOTER
+
+\setlength{\footskip}{0.5in}
+
+% LINE BREAKS
+
+\fvset{breaklines=true}
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                                 IDENTATIONS                                  ║
+% ║                                                                              ║
+% ║   https://ctan.org/pkg/titlesec                                              ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+% TITLES
+
+\titlespacing{\section}{0pt}{*0}{\baselineskip}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titlespacing{\paragraph}{0.5in}{*0}{1ex}
+\titlespacing{\subparagraph}{0.5in}{*0}{1ex}
+
+% TEXT
 \setlength{\parindent}{0.5in}
+
+% LISTS
+
 \setlist[itemize]{leftmargin=0.5in}
 
-% Vertical
-\setlength{\voffset}{0in}
-\setlength{\topmargin}{-0.5in}
-\setlength{\footskip}{0.5in}
-\setlength{\headsep}{-\topmargin-\headheight}
-\setlength{\textheight}{\paperheight-2in}
+% QUOTES
+
+\renewenvironment{quote}{
+    \list{}{
+        \leftmargin=0.5in
+        \rightmargin=0pt
+        \topsep=0pt
+        \parsep=0pt
+    }\item\relax
+}{\endlist}%\vspace{-\baselineskip}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
-% ║   Preamble macro's parameters for cover page information. Please visit the   ║
-% ║   documentation for more information:                                        ║
-% ║   www.overleaf.com/learn/latex/How_TeX_macros_actually_work%3A_Part_4        ║
+% ║                                    HEADERS                                   ║
+% ║                                                                              ║
+% ║   https://ctan.org/pkg/fancyhdr                                              ║
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\def\degree#1{\gdef\@degree{#1}}
-\def\director#1{\gdef\@director{#1}}
-\def\directordegree#1{\gdef\@directordegree{#1}}
-\def\codirector#1{\gdef\@codirector{#1}}
-\def\codirectordegree#1{\gdef\@codirectordegree{#1}}
-\def\institution#1{\gdef\@institution{#1}}
-\def\faculty#1{\gdef\@faculty{#1}}
-\def\school#1{\gdef\@school{#1}}
-\def\academicprogram#1{\gdef\@academicprogram{#1}}
-\def\city#1{\gdef\@city{#1}}
-\def\actualyear#1{\gdef\@actualyear{#1}}
+\newcommand{\setheader}[1]{
+
+    \pagestyle{fancy}
+    \fancyhf{}
+    \fancyhead[L]{#1}
+    \fancyhead[R]{\thepage}
+
+    \renewcommand{\headrulewidth}{0pt}
+
+    \fancypagestyle{plain}{
+        \fancyhf{}
+        \fancyhead[L]{#1}
+        \fancyhead[R]{\thepage}
+        \renewcommand{\headrulewidth}{0pt}
+    }
+}
 
 % ╔══════════════════════════════════════════════════════════════════════════════╗
 % ║                                                                              ║
@@ -104,28 +160,135 @@
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
+\newcommand{\@dregree}{}
+\newcommand{\@director}{}
+\newcommand{\@directordegree}{}
+\newcommand{\@codirector}{}
+\newcommand{\@codirectordegree}{}
+\newcommand{\@institution}{}
+\newcommand{\@faculty}{}
+\newcommand{\@school}{}
+\newcommand{\@program}{}
+\newcommand{\@city}{}
+\newcommand{\@actualyear}{}
+
+\newcommand{\degree}[1]{\gdef\@degree{#1}}
+\newcommand{\director}[1]{\gdef\@director{#1}}
+\newcommand{\directordegree}[1]{\gdef\@directordegree{#1}}
+\newcommand{\codirector}[1]{\gdef\@codirector{#1}}
+\newcommand{\codirectordegree}[1]{\gdef\@codirectordegree{#1}}
+\newcommand{\institution}[1]{\gdef\@institution{#1}}
+\newcommand{\faculty}[1]{\gdef\@faculty{#1}}
+\newcommand{\school}[1]{\gdef\@school{#1}}
+\newcommand{\academicprogram}[1]{\gdef\@program{#1}}
+\newcommand{\city}[1]{\gdef\@city{#1}}
+\newcommand{\actualyear}[1]{\gdef\@actualyear{#1}}
+
 \newcommand{\coverpage}{
     \begin{center}
-        {\@title \par}
-        \vfill
-        {\@author \par}
-        \vfill
-        {Trabajo de Grado Para Optar al Título de \@degree}
-        \vfill
-        {Director \par}
-        {\@director \par}
-        {\@directordegree \par}
-        \vfill
-        {Codirector \par}
-        {\@codirector \par}
-        {\@codirectordegree \par}
-        \vfill
-        {\@institution \par}
-        {Facultad de \@faculty \par}
-        {Escuela de \@school \par}
-        {\@academicprogram \par}
-        {\@city \par}
-        {\@actualyear}
+        
+        \ifboolexpr{
+            test {\ifdefempty{\@title}} or
+            test {\ifdefempty{\@author}} or
+            test {\ifdefempty{\@degree}} or
+            test {\ifdefempty{\@director}} or
+            test {\ifdefempty{\@directordegree}}
+        }{
+            \PackageError{ara}{
+                Falta alguno de los siguientes datos:
+                \string\title{...},
+                \string\author{...},
+                \string\degree{...},
+                \string\director{...},
+                \string\directordegree{...},
+            }{
+                Complete estos comandos antes de \string\begin{document}
+            }
+        }{
+            \@title \par
+            \vfill
+            \@author \par
+            \vfill
+            Trabajo de Grado Para Optar al Título de \@degree
+            \vfill
+            Director \par
+            \@director \par
+            \@directordegree \par
+        }
+
+        \ifdefempty{\@codirector}{
+            \vfill
+            \vspace{3\baselineskip}
+            \vfill
+        }{
+            \ifx\@codirectordegree\@empty
+
+                \PackageError{ara}{
+                    Falta el grado del codirector
+                }{
+                    Agregue \string\codirectordegree{...} antes de \string\begin{document}
+                }
+
+            \fi
+            
+            \vfill
+            Codirector \par
+            \@codirector \par
+            \@codirectordegree \par
+            \vfill
+        }
+
+        \ifboolexpr{
+            test {\ifdefempty{\@institution}} or
+            test {\ifdefempty{\@faculty}} or
+            test {\ifdefempty{\@school}} or
+            test {\ifdefempty{\@program}} or
+            test {\ifdefempty{\@city}} or
+            test {\ifdefempty{\@actualyear}}
+        }{
+            \PackageError{ara}{
+                Falta alguno de los siguientes datos:
+                \string\institution{...},
+                \string\faculty{...},
+                \string\school{...},
+                \string\program{...},
+                \string\city{...},
+                \string\actualyear{...}
+            }{
+                Complete estos comandos antes de \string\begin{document}
+            }
+        }{
+            \@institution \par
+            Facultad de \@faculty \par
+            Escuela de \@school \par
+            \@program \par
+            \@city \par
+            \@actualyear
+        }
+
+        \clearpage
+
     \end{center}
-    \clearpage
 }
+
+% ╔══════════════════════════════════════════════════════════════════════════════╗
+% ║                                                                              ║
+% ║                           LIST OF APPENDICES PAGE                            ║
+% ║                                                                              ║
+% ║   https://ctan.org/pkg/tocloft                                               ║
+% ║                                                                              ║
+% ╚══════════════════════════════════════════════════════════════════════════════╝
+
+% Using Tocloft
+\newlistof{appendixlist}{loa}{\hfill\bfseries\normalsize{Lista de apéndices}\hfill}
+
+% Command for creating appendices in LOA and in text
+\newcommand{\appendixsection}[1]{
+  \refstepcounter{section}
+  \addcontentsline{loa}{section}{{Apéndice \thesection. }#1}
+  \section*{\textbf{Apéndice \thesection}\\#1}
+}
+
+\addtocontents{loa}{\hfill\bfseries\normalsize{Pág.}\par}
+
+\newcommand{\listofappendices}{\listofappendixlist}
