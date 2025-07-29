@@ -1,0 +1,115 @@
+\begin{ThreePartTable}
+
+    \renewcommand\TPTminimum{\textwidth}
+
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+    \setlength\tabcolsep{3pt}
+
+    \begin{TableNotes}
+        \item \textbf{Nota.} Adaptado de: \textcite[p. 44]{AENOR:2016} [traducido del inglés].
+    \end{TableNotes}
+
+    \begin{longtable}{@{}P{0.2\textwidth}P{0.2\textwidth}P{0.6\textwidth} @{}}
+
+        \caption{Datos de mantenimiento} \label{tab:maintenance_data} \\
+
+        \toprule
+        \textbf{Categoría de los datos} &
+            \textbf{Datos a ser registrados} &
+                \textbf{Descripción} \\
+        \toprule
+        \endfirsthead
+        
+        \multicolumn{3}{r}{\textit{(Continuación de la tabla~\ref{tab:maintenance_data})}} \\
+        \toprule
+        \textbf{Categoría de los datos} &
+            \textbf{Datos a ser registrados} &
+                \textbf{Descripción} \\
+        \toprule
+        \endhead
+
+        \midrule[\heavyrulewidth]
+        \multicolumn{3}{r}{\textit{Continúa en la siguiente página}}\\
+        \endfoot
+
+        \bottomrule
+        \insertTableNotes\\
+        \endlastfoot
+
+        \multirow{3}{\linewidth}{Identificación} &
+            Registro de mantenimiento &
+                Identificación única del mantenimiento \\
+            \cline{2-3} &
+            Ubicación e identificación del equipo &
+                p. ej. Etiqueta de identificación física \\
+            \cline{2-3} &
+            Registro de fallas &
+                El correspondiente registro de identificación de falla \\
+
+        \midrule
+
+        \multirow{9}{\linewidth}{Datos de mantenimiento} & 
+            Fecha del mantenimiento & 
+                Fecha cuando la actividad de mantenimiento fue realizada o planificada (Fecha de inicio) \\
+            \cline{2-3} &
+            Ubicación e identificación del equipo &
+                p. ej. Etiqueta de identificación física \\
+            \cline{2-3} &
+            Categoría del mantenimiento &
+                Categoría principal (correctivo, preventivo) \\
+            \cline{2-3} &
+            Prioridad del mantenimiento &
+                Prioridad alta, media o baja \\
+            \cline{2-3} &
+            Intervalo (mantenimiento planificado) &
+                Calendario o intervalo operativo \\
+            \cline{2-3} &
+            Actividad de mantenimiento &
+                Descripción de la actividad de mantenimiento \\
+            \cline{2-3} &
+            Impacto del mantenimiento en operaciones en planta &
+                Cero, parcial o total \\
+            \cline{2-3} &
+            Sub-unidad mantenida &
+                Nombre de la sub-unidad mantenida (puede omitirse para el mantenimiento preventivo) \\
+            \cline{2-3} &
+            Componentes o elementos mantenidos &
+                Especificar el componente o elemento que fue mantenido \\
+            \cline{2-3} &
+            Localización de piezas de recambio &
+                Disponibilidad de piezas de recambios (p. ej. local/distante, fabricante) \\
+
+        \midrule
+
+        \multirow{3}{\linewidth}{Recursos de mantenimiento} &
+            Horas-hombre de mantenimiento por disciplina &
+                Horas-hombre de mantenimiento por disciplina (mecánica, eléctrica, instrumentación, otros) \\
+            \cline{2-3} &
+            Horas-hombre de mantenimiento totales &
+                Horas-hombre de mantenimiento totales \\
+            \cline{2-3} &
+            Recursos para equipos de mantenimiento &
+                p. ej. recipiente para la intervención, grúa \\
+
+        \midrule
+
+        \multirow{3}{\linewidth}{Tiempos de mantenimiento} &
+            Tiempo de mantenimiento activo &
+                Tiempo de duración para que el mantenimiento activo sea realizado en el equipo \\
+            \cline{2-3} & 
+            Tiempo muerto &
+                Tiempo de duración durante el cual un elemento está en inactividad \\
+            \cline{2-3} &
+            Problemas o retrasos de mantenimiento &
+                Causas de tiempos de inactividad prolongados, p. ej. logísticas, climáticas, andamiaje, falta de repuestos, retraso del personal \\
+
+        \midrule
+
+        Observaciones &
+            Información adicional &
+                Proporcionar más detalles, si están disponibles, en la actividad de mantenimiento y recursos usados \\
+
+    \end{longtable}
+
+\end{ThreePartTable}

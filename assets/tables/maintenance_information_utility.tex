@@ -1,0 +1,71 @@
+\begin{ThreePartTable}
+
+    \renewcommand\TPTminimum{\textwidth}
+
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+    \setlength\tabcolsep{3pt}
+
+    \begin{TableNotes}
+        \item \textbf{Nota.} Adaptado de: \textcite[p. 44]{AENOR:2016} [traducido del inglés].
+    \end{TableNotes}
+
+    \begin{longtable}{@{}P{0.2\textwidth}P{0.2\textwidth}P{0.6\textwidth} @{}}
+
+        \caption{Utilidad de la información de mantenimiento} \label{tab:maintenance_information_utility} \\
+
+        \toprule
+        \textbf{Información a ser recogida} &
+            \textbf{Prioridad en la recogida de datos} &
+                \textbf{Ejemplos} \\
+        \toprule
+        \endfirsthead
+        
+        \multicolumn{3}{r}{\textit{(Continuación de la tabla~\ref{tab:maintenance_information_utility})}} \\
+        \toprule
+        \textbf{Información a ser recogida} &
+            \textbf{Prioridad en la recogida de datos} &
+                \textbf{Ejemplos} \\
+        \toprule
+        \endhead
+
+        \midrule[\heavyrulewidth]
+        \multicolumn{3}{r}{\textit{Continúa en la siguiente página}}\\
+        \endfoot
+
+        \bottomrule
+        \insertTableNotes\\
+        \endlastfoot
+
+        Mantenimiento correctivo &
+            Requerida &
+                \begin{itemize}[left=1em, nosep]
+                    \item Tiempo de reparación (MTTR o MRT)
+                    \item Cantidad de mantenimiento correctivo
+                    \item Estrategia de reemplazo o reparación
+                \end{itemize} \\
+
+        \midrule
+
+        Mantenimiento preventivo &
+            Opcional &
+                \begin{itemize}[left=1em, nosep]
+                    \item Historial de la vida útil del equipo
+                    \item Cantidad total de recursos usados
+                    \item Tiempo muerto total
+                    \item Efecto del mantenimiento preventivo en la tasa de falla
+                    \item Balance entre mantenimiento preventivo y correctivo
+                \end{itemize} \\
+
+        \midrule
+
+        Mantenimiento programado &
+            Opcional &
+                \begin{itemize}[left=1em, nosep]
+                    \item Diferencia entre el mantenimiento estimado y ejecutado (backlog)
+                    \item Actualización de los programas de mantenimiento basado en la experiencia (métodos, recursos e intervalos)
+                \end{itemize} \\
+
+    \end{longtable}
+
+\end{ThreePartTable}
