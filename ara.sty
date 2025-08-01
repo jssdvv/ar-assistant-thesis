@@ -16,6 +16,7 @@
 \usepackage{tocloft}            % Sections
 \usepackage{caption}            % Captions
 \usepackage{array}              % Columns
+\usepackage{float}
 %\usepackage{showframe}         % Margins
 
 % FIGURES
@@ -164,10 +165,12 @@
     labelfont=bf,
     textfont=it,
     labelsep=newline,
-    font={normalsize,stretch=2},
+    font={normalsize,doublespacing},
     justification=raggedright,
     singlelinecheck=false
 }
+
+\setlength{\textfloatsep}{0pt}
 
 % NAME
 
