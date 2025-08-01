@@ -116,7 +116,13 @@
 
 % LISTS
 
-\setlist[itemize]{leftmargin=0.5in}
+\setlist[itemize]{
+    label=\textbullet,       
+    topsep=0pt,
+    partopsep=0pt,
+    parsep=0pt,
+    leftmargin=0.5in
+}
 
 % QUOTES
 
