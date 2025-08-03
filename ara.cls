@@ -120,6 +120,16 @@
     label=\textbullet,       
     topsep=0pt,
     partopsep=0pt,
+    itemsep=0pt,
+    parsep=0pt,
+    leftmargin=0.5in
+}
+
+\setlist[enumerate]{
+    label=\arabic*.,
+    topsep=0pt,
+    partopsep=0pt,
+    itemsep=0pt,
     parsep=0pt,
     leftmargin=0.5in
 }
