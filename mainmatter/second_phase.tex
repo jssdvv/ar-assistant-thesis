@@ -1,112 +1,110 @@
-\section{Fase II. Desarrollo del aplicativo de realidad aumentada}
+\section{Desarrollo del aplicativo de realidad aumentada}
 
-    En esta fase se desarrolló el código del aplicativo móvil, incluyendo lo definido en la fase previa de investigación, donde se incluyeron las características propias del mantenimiento respecto a una máquina, implementado los modelos 3D de la misma con una interfaz gráfica que facilita la interacción del usuario con el aplicativo.
+    Esta fase comprende el diseño e implementación del aplicativo móvil de realidad aumentada, el cual integra modelos 3D de la máquina junto con información técnica de mantenimiento, presentados a través de una interfaz gráfica intuitiva que facilita la interacción del usuario.
 
-    \subsection{Programación en android}
+    \subsection{Herramientas de programación}
 
-        Para el desarrollo del aplicativo android se optó por usar el lenguaje de programación Kotlin y el kit de herramientas moderno de Jetpack Compose para la creación de interfaces de usuario nativas.
+        El aplicativo fue desarrollado para la plataforma Android utilizando Kotlin como lenguaje de programación, en conjunto con Jetpack Compose como kit de herramientas para la construcción de interfaces de usuario nativas y declarativas. El entorno de desarrollo integrado (IDE) empleado fue Android Studio, plataforma oficial para el desarrollo de aplicaciones Android.
 
-        \subsubsection{Temas}
+        \subsubsection{Interfaz de usuario}
 
-            Se hizo uso de componentes gráficos de Material Design 3 con un conjunto personalizado de esquema de colores, tipografías y formas para el aplicativo.
+            La interfaz fue construida usando como base las directrices de Material Design 3, con una capa de personalización que abarca el esquema de colores, tipografías, espaciados, formas y disposición de los componentes.
 
-        \subsubsection{Arquitectura}
+        \subsubsection{Arquitectura de software}
 
-            Se usó una arquitectura basada en el patrón MVVM (Model-View-ViewModel), la cual separa la interfaz de usuario (View) de la lógica de negocio de la aplicación (Model), conectándose mediante clases que actúan como puente (ViewModel).
-
-        \subsubsection{Entorno de desarrollo integrado}
-
-            Para el desarrollo de la aplicación se usó el IDE (entorno de desarrollo integrado) oficial para la plataforma de Android: Android Studio.
+            El aplicativo sigue el patrón de arquitectura MVVM (Model-View-ViewModel), el cual establece una separación entre la interfaz de usuario (View) y la lógica de negocio (Model), comunicandose a través de clases intermediarias (Viewmodel) que gestionan el estado y los datos expuesto a la vista.
 
     \subsection{Subsistemas del aplicativo}
 
-        Según los requerimientos establecidos en la Fase I, con el uso de las encuestas y los referentes bibliográficos se realizó el esquema de los subsistemas del aplicativo a partir de una funcionalidad en específico:
+        A partir de los requerimientos establecidos mediante las encuestas y los referentes bibliográficos, el aplicativo fue estructurado en subsistemas, cada uno con una responsabilidad funcional bien definida:
 
-        \input{assets/figures/application_subsystems.tex}
+        \input{assets/figures/second_phase/fig_subsystems.tex} %% cambiar imagen
 
         \subsubsection{Subsistema de núcleo}
 
-            Este paquete separa la lógica y definiciones esenciales del aplicativo, tal como el flujo de navegación entre las diferentes pantallas y la declaración de la base de datos, así como describir los estilos compartidos entre paquetes, tales como: tipografías, formas, colores, tipos y funcionalidades comunes.
+            Contiene la lógica y las definiciones transversales del aplicativo: el flujo de navegación entre pantallas, la declaración de la base de datos local, y los estilos compartidos entre subsistemas, incluyendo tipografías, colores, formas y utilidades comunes.
 
         \subsubsection{Subsistema de escáner}
 
-            Este paquete separa la lógica y componentes gráficos de la sección de navegación de “Escáner” relacionado con la implementación de una previsualización de la cámara con el fin de agilizar el acceso a la información de las máquinas únicamente escaneando alguno de sus marcadores.
+            Agrupa la lógica y los componentes gráficos correspondientes a la sección de escáner, la cual implementa una previsualización de cámara en tiempo real para la lectura de marcadores, agilizando el acceso a la información de una máquina sin necesidad de realizar una navegación manual.
 
         \subsubsection{Subsistema de máquinas}
 
-            Este paquete separa la lógica y componentes gráficos de la sección de navegación de “Máquinas” relacionado con la gestión de información de las máquinas, documentos PDF, marcadores, modelos, lista de proveedores y las actividades de mantenimiento usando realidad aumentada.
+            Gestiona la lógica y los componentes gráficos de la sección de máquinas, abarcando la administración de información técnica, documentos PDF, marcadores, modelos 3D, lista de proveedores y actividades de mantenimiento con realidad aumentada.
 
         \subsubsection{Subsistema de cronograma}
 
-            Este paquete separa la lógica y componentes gráficos de la sección del gráfico de navegación de “Cronograma” relacionado con la gestión de: notificaciones, programación de eventos o historiales.
+            Concentra la lógica y los componentes gráficos de la sección de cronograma, encargándose de la programación de eventos de mantenimiento y la gestión de notificaciones asociadas, donde dichos eventos corresponden a las actividades de mantenimiento vinculadas a las máquinas gestionadas en el subsistema de máquinas.
 
-    \subsection{Secciones de navegación}
+        \subsubsection{Subsistema de herramientas}
 
-        Como todo sistema o aplicación, la organización de sus destinos se basan en un sistema de enrutamiento que maneja el flujo de navegación entre las diferentes secciones para su acceso y ejecución de paneles o componentes, este sistema se conoce como árbol de navegación que define la jerarquía entre los destinos del aplicativo.
+            Agrupa la lógica y los componentes gráficos de la sección de herramientas, centralizando la disponibilidad de los instrumentos que pueden ser requeridos durante las actividades de mantenimiento vinculadas a las máquinas gestionadas en el subsistema de máquinas.
 
-        \input{assets/figures/navigation_sections.tex}
+    \subsection{Navegación del aplicativo}
 
-        \subsubsection{Gráficos de navegación anidados}
+        La organización de los destinos del aplicativo se basa en un sistema de enrutamiento que gestiona el flujo de navegación entre secciones, controlando el acceso y la presentación de pantallas y componentes. Este sistema se representa mediante un árbol de navegación, el cual define la jerarquía entre los destinos del aplicativo.
 
-            Una vez definida la jerarquía principal de los gráficos de navegación de las secciones, se definen los árboles de navegación anidados, los cuales administran la sub-navegación por separado de cada sección, logrando que el flujo principal sea más fácil de comprender, donde estos se componen principalmente de destinos los cuales representan una pantalla en el aplicativo. Sin embargo, las secciones de escáner o cronograma solo presentan una pantalla por lo cual no se realiza un gráfico de navegación anidado
+        \input{assets/figures/second_phase/navigation/fig_navigation_graph_main.tex} %% cambiar imagen
 
-        \input{assets/figures/machines_navigation_graph.tex}
+        \subsubsection{Árboles de navegación anidados}
 
-    \subsection{Organización de los datos}
+            A partir de la jerarquía principal, cada sección define su propio árbol de navegación anidado, el cual administra de forma independiente la sub-navegación interna, simplificando la comprensión del flujo principal. Cada destino dentro de estos árboles representa una pantalla del aplicativo. Las secciones de escáner y cronograma, al contar con una única pantalla, no requieren un árbol de navegación anidado.
 
-        Se construyó una base de datos basada en SQLite, donde se realizó una esquematización de los diferentes datos que se almacenaron para cada una de las pantallas, donde se hizo uso de un modelo de entidad-relación (ERD), para la creación de los esquemas de relaciones entre tablas.
+        \input{assets/figures/second_phase/navigation/fig_navigation_graph_machines.tex} %% cambiar imagen
 
-        \subsubsection{Tablas de las entidades}
+    \subsection{Diseño de la base de datos}
 
-            \paragraph{Las tablas de entidades de información técnica.}se encargan de almacenar los datos de identificación y especificaciones que respecta a una única máquina, así mismo de las entidades que almacenan documentos e imágenes para el mismo fin.
+        El diseño de la base de datos está basado en SQLite con el uso de la librería Room para Android, estructurándose en tablas de entidades y tablas intermedias según la naturaleza de los datos almacenados.
 
-            \input{assets/figures/entity_machine_and_specs.tex}
+        \subsubsection{Tablas de entidades}
 
-            \input{assets/figures/entity_motor_and_specs.tex}
+            Las tablas de entidades almacenan los datos individuales de un objeto en específico, agrupándose según su propósito funcional.
 
-            \input{assets/figures/entity_document.tex}
+            \paragraph{Entidades de información técnica.} Almacenan los datos de identificación y especificaciones técnicas de la máquina y su motor eléctrico. Cada equipo separa su información en dos tablas: una de identidad y otra de especificaciones, dado el volumen de atributos que cada una maneja. Adicionalmente, se incluye una entidad para los documentos PDF vinculados a cada máquina.
 
-            \paragraph{Las tablas de entidades de realidad aumentada.}se encargan de almacenar los datos de los diferentes objetos aumentados, sean: etiquetas, imágenes, marcadores, o modelos 3D que son exclusivos para cada máquina.
+                \input{assets/figures/second_phase/entity/fig_entity_machine_and_specs.tex}
 
-            \input{assets/figures/entity_model.tex}
+                \input{assets/figures/second_phase/entity/fig_entity_motor_and_specs.tex}
 
-            \input{assets/figures/entity_marker.tex}
+                \input{assets/figures/second_phase/entity/fig_entity_document.tex}
 
-            \input{assets/figures/entity_label.tex}
+            \paragraph{Entidades de realidad aumentada.} Almacenan los datos de los elementos aumentados vinculados a cada máquina: los marcadores físicos que activan la experiencia AR y los modelos 3D superpuestos. Ambas entidades incluyen offsets de posición y rotación expresados en coordenadas cartesianas y cuaterniones, necesarios para su calibración espacial.
 
-            \paragraph{Las tablas de entidades de procesos.}Se encargan de almacenar los datos de los diferentes procedimientos de mantenimiento, así como referenciar a archivos de imagen o modelos necesarios para cada paso de esta.
+                \input{assets/figures/second_phase/entity/fig_entity_marker.tex}
 
-            \input{assets/figures/entity_activity.tex}
+                \input{assets/figures/second_phase/entity/fig_entity_model.tex}
 
-            \input{assets/figures/entity_step.tex}
+            \paragraph{Entidades de procesos de mantenimiento.} Conforman una cadena jerárquica que estructura los procedimientos de mantenimiento: una actividad agrupa pasos ordenados, cada paso contiene operaciones que definen las animaciones 3D ejecutadas sobre los modelos durante la experiencia de realidad aumentada.
 
-            \input{assets/figures/entity_animation.tex}
+                \input{assets/figures/second_phase/entity/fig_entity_activity.tex}
 
-            \input{assets/figures/entity_renderable.tex}
+                \input{assets/figures/second_phase/entity/fig_entity_step.tex}
 
-            \paragraph{Las tablas de entidades compartidas.}Se encargan de almacenar datos que se comparten entre distintas máquinas.
+                %\input{assets/figures/second_phase/entity/fig_entity_operation.tex}
 
-            \input{assets/figures/entity_supplier.tex}
+            \paragraph{Entidades de catálogo.} Almacenan datos reutilizables globalmente, sin vínculo directo a una máquina en particular. En este caso, el catálogo de herramientas disponibles durante las actividades de mantenimiento, cada una con representación visual vectorial según su tipo.
 
-        \subsubsection{Tablas de referencia cruzada}
+                %\input{assets/figures/second_phase/entity/fig_entity_tool.tex}
 
-            Se encargan de almacenar los registros de la relación entre múltiples entidades de un tipo a múltiples entidades de otro tipo donde se juntan las llaves primarias (PK) de las entidades referenciadas como se muestra en la Figura \ref{fig:cross_ref_machine_supplier} y la Figura \ref{fig:cross_ref_animation_renderable_visibility}.
+            \paragraph{Entidad de cronograma.} Almacena los eventos de mantenimiento programados, cada uno vinculado a una actividad específica del subsistema de máquinas. Gestiona la recurrencia y la programación temporal de dichos eventos.
 
-            \input{assets/figures/cross_ref_machine_supplier.tex}
+                %\input{assets/figures/second_phase/entity/fig_entity_event.tex}
 
-            \input{assets/figures/cross_ref_animation_renderable_visibility.tex}
+        \subsubsection{Tablas intermedias}
 
-        \subsubsection{Relaciones entre tablas}
+            Se encargan de almacenar los registros de la relación entre múltiples entidades de un tipo a múltiples entidades de otro tipo donde se juntan las llaves primarias (PK) de las entidades referenciadas como se muestra en la Figura %\ref{fig:cross_ref_machine_supplier} y la Figura \ref{fig:cross_ref_animation_renderable_visibility}.
 
-            Comúnmente las relaciones entre las entidades son de tipo uno a uno (1:1) o de uno a muchos (1:N), donde describen que registros de una tabla de entidad primaria están vinculados a uno o múltiples registros de una tabla secundaria respectivamente. Estas relaciones se definen mediante una llave primaria (PK) en la tabla principal que conecta a una llave foránea (FK) en la tabla secundaria como se muestra en la Figura \ref{fig:relation_between_entities}.
+            %\input{assets/figures/entity_pivot_composite.tex}
 
-            \input{assets/figures/relation_between_entities.tex}
+        \subsubsection{Modelo de relaciones}
 
-            Sin embargo, cuando tenemos relaciones de mucho a muchos (N:N) entre diferentes tablas de entidades, es necesaria la intervención de una tabla intermedia que describa este tipo de relación, siendo esta una tabla de referencia cruzada o una tabla compuesta como se muestra en la Figura \ref{fig:relation_between_machines_suppliers} y la Figura \ref{fig:relation_between_animations_renderables_steps}.
+            Comúnmente las relaciones entre las entidades son de tipo uno a uno (1:1) o de uno a muchos (1:N), donde describen que registros de una tabla de entidad primaria están vinculados a uno o múltiples registros de una tabla secundaria respectivamente. Estas relaciones se definen mediante una llave primaria (PK) en la tabla principal que conecta a una llave foránea (FK) en la tabla secundaria como se muestra en la Figura \ref{fig:relation_entities}.
 
-            \input{assets/figures/relation_between_machines_suppliers.tex}
+            \input{assets/figures/second_phase/relation/fig_relation_entities.tex}
 
-            \input{assets/figures/relation_between_animations_renderables_steps.tex}
+            Sin embargo, cuando tenemos relaciones de mucho a muchos (N:N) entre diferentes tablas de entidades, es necesaria la intervención de una tabla intermedia que describa este tipo de relación, siendo esta una tabla de referencia cruzada o una tabla compuesta como se muestra en la Figura %%%%%%%%%%%%%% y la Figura \ref{fig:relation_between_animations_renderables_steps}.
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% input nuevo
 
     \subsection{Secuencias de los procedimientos}
 
@@ -114,11 +112,11 @@
 
         \subsubsection{Secuencia para la realización de una actividad de mantenimiento}
 
-            En la Figura \ref{fig:qr_activity_sequence} y la Figura \ref{fig:no_qr_activity_sequence}, se definen la interacción del usuario con los componentes principales de realidad aumentada del aplicativo, tales como los marcadores o códigos QR, y la guía paso a paso de una actividad de mantenimiento preventivo.
+            En la Figura \ref{fig:sequence_scanner} y la Figura \ref{fig:sequence_manual}, se definen la interacción del usuario con los componentes principales de realidad aumentada del aplicativo, tales como los marcadores o códigos QR, y la guía paso a paso de una actividad de mantenimiento preventivo.
 
-            \input{assets/figures/qr_activity_sequence.tex}
+            \input{assets/figures/second_phase/sequence/fig_sequence_scanner.tex}
 
-            \input{assets/figures/no_qr_activity_sequence.tex}
+            \input{assets/figures/second_phase/sequence/fig_sequence_manual.tex}
 
     \subsection{Formatos de extensión de los archivos}
 
@@ -150,51 +148,47 @@
 
             Un dispositivo Android usa un sistema de coordenadas de mano derecha, el cual se define en relación con su pantalla en su orientación natural (ver Figuras \ref{fig:coordinate_system_portrait} y \ref{fig:coordinate_system_landscape}). Cuando el dispositivo es sostenido en la orientación predeterminada, el eje X se extiende horizontalmente por el plano de la pantalla apuntando hacia la derecha, el eje Y se extiende verticalmente de este mismo plano apuntando hacia arriba y el eje Z se proyecta normal al plano de la pantalla apuntando hacia el usuario.
 
-            \input{assets/figures/coordinate_system_protrait.tex}
+            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_protrait.tex}
             
-            \input{assets/figures/coordinate_system_landscape.tex}
+            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_landscape.tex}
             
             El punto más importante de este sistema de coordenadas es que al cambiar la orientación del dispositivo, sus ejes no cambian, de este modo al iniciar una sesión de realidad aumentada, los modelos son alineados verticalmente respecto al suelo, independientemente a donde apunte la cámara como lo muestra la Figura \ref{fig:coordinate_system_scene}.
 
-            \input{assets/figures/coordinate_system_scene.tex}
+            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_scene.tex}
 
         \subsubsection{Nodos de la escena}
 
             Un nodo en una escena de realidad aumentada es una entidad que representa una transformación en el espacio 3D, la cual puede contener otros nodos o elementos gráficos como modelos 3D, figuras geométricas, luces o cámaras. Estos nodos se organizan en una estructura jerárquica donde las transformaciones de un nodo afectan a sus nodos hijos. Además, cada nodo puede funcionar como un sistema de coordenadas relativo al propio de la escena como se muestra en la Figura \ref{fig:coordinate_system_comparison}, actuando como un sistema de referencia local para sus nodos descendientes.
 
-            \input{assets/figures/coordinate_system_comparison.tex}
+            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_comparison.tex}
 
-            \paragraph{Nodo de camara de realidad aumentada.}Representa una cámara virtual donde se observa la perspectiva de la escena de realidad aumentada. En el aplicativo, su posición y rotación están ligadas al movimiento físico del dispositivo en el mundo real controlado por ARCore, siendo la vista principal donde se renderiza la escena tridimensional como se muestra en la Figura \ref{fig:node_ar_camera}.
+            \paragraph{Nodo de camara de realidad aumentada.}Representa una cámara virtual donde se observa la perspectiva de la escena de realidad aumentada. En el aplicativo, su posición y rotación están ligadas al movimiento físico del dispositivo en el mundo real controlado por ARCore, siendo la vista principal donde se renderiza la escena tridimensional como se muestra en la Figura \ref{fig:node_camera}.
 
-            \input{assets/figures/node_ar_camera.tex}
+            \input{assets/figures/second_phase/node/fig_node_camera.tex}
 
             \paragraph{Nodo de imagen aumentada.}Representa la ubicación y orientación de una imagen real que, una vez detectada por la cámara del dispositivo, actúa como un ancla dentro de la escena de realidad aumentada como se muestra en la Figura \ref{fig:node_augmented_image}. Dicha imagen debe estar previamente registrada en una base de datos de marcadores visuales.
 
-            \input{assets/figures/node_augmented_image.tex}
+            \input{assets/figures/second_phase/node/fig_node_augmented_image.tex}
 
             \paragraph{Nodo de plano.}Representa una geometría plana en la escena de realidad aumentada la cual puede tener imágenes o texturas tal como se muestra en la Figura \ref{fig:node_plane}.
 
-            \input{assets/figures/node_plane.tex}
+            \input{assets/figures/second_phase/node/fig_node_plane.tex}
 
             \paragraph{Nodo de modelo}representa un modelo 3D (ver Figura \ref{fig:node_model}) cargado desde un archivo con formato de extensión .glb, el cual se puede personalizar añadiendole texturas, materiales o nodos hijos, desde un programa externo.
 
-            \input{assets/figures/node_model.tex}
+            \input{assets/figures/second_phase/node/fig_node_model.tex}
 
             \paragraph{Nodo de geometría.}Representa un conjunto de mallas (meshes), las cuales están formadas por primitivas geométricas básicas, como puntos, líneas o triángulos (ver Figura \ref{fig:node_geometry}). Cada primitiva contiene su propia información de geometría, como vértices, normales y coordenadas UV, además de su propio material. Este nodo permite la creación de figuras programables como cilindros, cubos, esferas, entre otras.
 
-            \input{assets/figures/node_geometry.tex}            
+            \input{assets/figures/second_phase/node/fig_node_geometry.tex}            
 
             \paragraph{Nodo de pose.}Representa un nodo base, el cual no tiene elementos visuales, pero posee una transformación 3D aplicada como anclaje para agrupar nodos hijos.
-
-            \paragraph{Nodo de resultado de prueba de impacto.}
-
-            % AGREGAR DEFINICION
 
         \subsubsection{Sesión de realidad aumentada}
 
             Una sesión de ARCore es una clase encargada de manejar el ciclo de vida y estado del sistema de realidad aumentada.
             
-            \paragraph{Configuración inicial.}La configuración inicial define los parámetros que controlan la experiencia antes de iniciar el procesamiento de la escena de realidad aumentada. En este proyecto la configuración inicial se establece mediante el bloque de código del Apéndice \ref{apc:ar_session_configuration}, el cual ajusta los siguientes parámetros:
+            \paragraph{Configuración inicial.}La configuración inicial define los parámetros que controlan la experiencia antes de iniciar el procesamiento de la escena de realidad aumentada. En este proyecto la configuración inicial se establece mediante el bloque de código del Apéndice \ref{apc:session_configuration}, el cual ajusta los siguientes parámetros:
 
             \begin{enumerate}
                 

@@ -1,49 +1,88 @@
 \section{Marco teórico}
 
-    \subsection{Mantenimiento preventivo}\label{subsec:preventive_maintenance}
+    El presente proyecto tiene como objetivo principal un desarrollo tecnológico aplicado al campo del mantenimiento industrial. Lo anterior implica la combinación de varios conceptos que sirven como guía, tanto para el proceso de diseño como para la comprensión del alcance del mismo. A continuación, se presenta un esquema de la estructura conceptual sobre la cual se elaboró el marco teórico y, en consecuencia, se llevó a cabo el ya mencionado desarrollo tecnológico:
 
-        El mantenimiento preventivo se define en base al periodo de tiempo previo a que ocurra la falla de un equipo, disminuyendo acciones correctivas que comprometen la disponibilidad de estos. Básicamente, el mantenimiento preventivo “consiste en programar inspecciones y revisiones a los equipos o máquinas, apoyándose en el conocimiento de estas en base a la experiencia de los ingenieros o técnicos, así también como el historial de la máquina” \parencite[p. 12]{TOLEDO:2018}.
+    %%Figura conceptual
 
-        \subsubsection{Enfoques del mantenimiento preventivo}
+    \subsection{Mantenimiento industrial}
 
-            La \textcite{IBM:SF} en su página web desglosa el mantenimiento preventivo en los siguientes cuatro tipos o enfoques para el planteamiento de rutinas o intervenciones:
+        El mantenimiento industrial constituye una función fundamental dentro de la gestión de los sistemas productivos de las empresas, ya que permite asegurar aspectos como la disponibilidad, confiabilidad y seguridad de los equipos e instalaciones a lo largo del tiempo. La normativa de la Unión Europea define al mantenimiento como la “combinación de todas las acciones técnicas, administrativas y de gestión realizadas durante el ciclo de vida de un elemento, destinadas a conservar o a devolverlo a un estado en el que pueda desempeñar la función requerida”. \parencite{UNE:2018}.
 
-            \begin{itemize}
-                
-                \item Mantenimiento preventivo según su uso.
+        El mantenimiento se puede clasificar según si se actúa previa o posteriormente al evento de una falla de un equipo. En la Figura \ref{fig:maintenance_categories} se muestra el esquema de dicha clasificación, con los nombres con los que se conocen a estas formas de abordar las acciones de mantención:
 
-                \item Mantenimiento preventivo según plazo o calendario.
+        \input{assets/figures/theoretical_framework/fig_maintenance_categories.tex}
 
-                \item Mantenimiento predictivo.
+        \subsubsection{Mantenimiento correctivo}
 
-                \item Mantenimiento prescriptivo.
+            El mantenimiento correctivo, también denominado como mantenimiento básico, es la metodología de llevar a cabo actividades en el momento en el que las propiedades o activos de la empresa dejan de realizar el servicio para el que fueron diseñados, es decir cuando se da la detección del evento de falla \parencite{MEDRANO:2017}.
 
-            \end{itemize}
+            Trabajar con el enfoque reactivo que implica esta metodología trae consigo la aparición de pérdidas debido a las paradas de producción, dado que la mano de obra se encontrará inactiva a la vez que se generan retrasos en el cumplimiento de los programas. \parencite{GALLARA:2020}.
 
+        \subsubsection{Mantenimiento preventivo}\label{subsec:preventive_maintenance}
 
-        \subsubsection{Registro de datos de mantenimiento}
+            El mantenimiento preventivo se define en base al periodo de tiempo previo a que ocurra la falla de un equipo, disminuyendo acciones correctivas que comprometen la disponibilidad de estos. Básicamente, el mantenimiento preventivo “consiste en programar inspecciones y revisiones a los equipos o máquinas, apoyándose en el conocimiento de estas en base a la experiencia de los ingenieros o técnicos, así también como el historial de la máquina” \parencite[p. 12]{TOLEDO:2018}.
 
-            Según la \textcite{AENOR:2016}, el registro de datos tras la ejecución de una actividad de mantenimiento es útil principalmente para el ingeniero de mantenimiento o el ingeniero encargado de la confiabilidad en la estimación de la disponibilidad de un equipo. Así mismo, se menciona que para un análisis de vida útil no solo es necesario el registro de fallas sino también las acciones de mantenimiento intencionadas a la restauración. Algunos ejemplos de la utilidad del registro de esta información se muestran en la Tabla \ref{tab:maintenance_information_utility}.
+            \paragraph{Enfoques del mantenimiento preventivo}
 
-            \input{assets/tables/maintenance_information_utility.tex}
+                La \textcite{IBM:SF} en su página web desglosa el mantenimiento preventivo en los siguientes cuatro tipos o enfoques para el planteamiento de rutinas o intervenciones:
 
-        \subsubsection{Datos a registrar de mantenimiento}
+                \begin{itemize}
+                    
+                    \item Mantenimiento preventivo según su uso.
 
-            Algunos de los datos más relevantes en el registro de actividades de mantenimiento se encuentran en la Tabla \ref{tab:maintenance_data}.
+                    \item Mantenimiento preventivo según plazo o calendario.
 
-            \input{assets/tables/maintenance_data.tex}
+                    \item Mantenimiento predictivo.
 
-    \subsection{Modelado 3D}
+                    \item Mantenimiento prescriptivo.
 
-        El modelado 3D es una representación tridimensional de un objeto usando software especializado que comienza desde la adquisición de datos y termina con un modelo virtual visualmente interactivo mediante el uso de una computadora, \parencite{GHUGE:2023}; tal como lo menciona \textcite{RAUSCH:2020}, en flujos de construcción la representación virtual de objetos físicos representa la base para el diseño, comunicación y requerimientos de un producto, y como verificación de los trabajos construidos.
+                \end{itemize}
+
+    \subsection{La información en entornos de mantenimiento}
+
+        La información se puede definir como el conjunto de datos que permiten conocer mejor el entorno de una empresa y con estos se disminuye la incertidumbre a la vez que se favorece la toma de decisiones acertadas, \textcite{LAPIEDRA:2021}. De acuerdo con \textcite{AENOR:2016}, el registro de datos generado tras la ejecución de actividades de mantenimiento constituye una herramienta de valor para el ingeniero de mantenimiento y el responsable de confiabilidad, particularmente en la estimación de la disponibilidad de los equipos. Algunos ejemplos de la utilidad de esta información se presentan en la Tabla \ref{tab:maintenance_information_utility}. Entre los datos más relevantes que conviene registrar tras cada intervención se encuentran los listados en la Tabla \ref{tab:maintenance_data}.
+
+        \input{assets/tables/tab_maintenance_information_utility.tex}
+
+        \input{assets/tables/tab_maintenance_data.tex}
+
+        \subsubsection{Gestión de la información}
+
+            \textcite{FONT:2014} describen que la gestión de Información abarca un conjunto de acciones dirigidas a recolectar información que cubra criterios de calidad, pertinencia, oportunidad y costo apropiados de acuerdo a las demandas del usuario; siendo fundamental el uso de las tecnologías de la información y las comunicaciones. Se tiene como objetivo ordenar y emplear la información, que provenga de fuentes tanto internas como externas, con el fin de simplificar su operación, aprendizaje y adaptación a los cambios del entorno.
+
+        \subsubsection{Flujo de la información}
+
+            Uno de los aspectos que incide directamente en la gestión de la información en entornos de mantenimiento es la estructura organizacional bajo la cual se concibe la empresa. La información manejada de forma centralizada tiene ventajas en su capacitación, manipulación y uso, además de disminuir las inconsistencias. Por su parte, "la descentralización permite adaptar las necesidades del usuario, por lo tanto, motiva al usuario, facilita el reparto de las tareas y multiplica la eficacia de las funciones directivas" \parencite[p. 3]{ARRIBAS:2000}. \textcite[p. 7]{BEN-DAYA:2009} señalan que en empresas de gran magnitud lo ideal es la estructura descentralizada, siendo la centralización lo recomendado para el caso de empresas de menor tamaño.
+
+        \subsubsection{Tipos de información en mantenimiento}
+
+            Complementario a los datos presentados en la Tabla \ref{tab:maintenance_data}, se presentan otras fuentes que respaldan y adicionan algunos puntos a considerar respecto al sistema de información de mantenimiento. Según la \textcite{COVENIN:1993} se describe a un sistema de información como “un conjunto de procedimientos interrelacionados, formales o informales, que permite la captura, procesamiento y flujo de información requerida en cada uno de los niveles de la organización” (p. 10), presentando procedimientos que contiene un sistema genérico de información de mantenimiento, los cuales contienen: codificación de los objetos de mantenimiento, registro de objetos de mantenimiento, instrucciones técnicas del mantenimiento, procedimiento de ejecución y programación del mantenimiento.
+        
+        \subsubsection{Gestión del conocimiento}
+
+            El conocimiento es una mezcla fluida de experiencia enmarcada, valores, información contextual y visión experta que proporciona un marco para evaluar e incorporar nuevas experiencias e información. Se origina y se aplica en la mente de los conocedores. En las organizaciones, a menudo está incluida no sólo en documentos o repositorios, sino también en rutinas, procesos, prácticas y normas organizativas. \textcite{DAVENPORT:1998}.
+
+            Por otro lado “La gestión del conocimiento es un enfoque y un conjunto de prácticas empresariales diseñadas para identificar, capturar, organizar, almacenar, compartir y aplicar el conocimiento dentro de una organización.” \parencite[p. 3]{RAMOS:2024}. También es el proceso organizacional que busca la combinación sinérgica del tratamiento de datos e información a través de las capacidades de las tecnologías de información y las capacidades de creatividad, innovación, trabajo en equipo y visión compartida de los seres humanos. \parencite{MALHOTRA:2005}.
+
+        \subsubsection{Sistema de gestión de conocimiento}
+
+            Según el \textcite[p. 6]{ICONTEC:2019} se dan pautas para desarrollar un sistema eficaz de gestión del conocimiento con el cual las empresas perciban una nueva fuente de generación de valor. Dentro de los puntos de la generación del conocimiento aparece la retención del conocimiento, definida como la capacidad de salvaguardar a la organización contra la pérdida de conocimiento. Asimismo se hacen anotaciones respecto a la protección del conocimiento en relación a las posibles rotaciones o variaciones del personal, además de tener la información documentada y respaldada.
+
+            También se hace énfasis en la necesidad de incluir actividades y comportamientos para la transferencia de conocimientos listando cuatro ítems, siendo uno de ellos denominado la combinación donde se busca “sintetizar, conservar, formalizar, estructurar o clasificar el conocimiento codificado, haciendo que este sea accesible y fácil de encontrar” \parencite[p. 7]{ICONTEC:2019}. Con lo anterior, se identifican puntos de convergencia entre la gestión del conocimiento en mantenimiento y el planteamiento de soluciones tecnológicas como la realidad aumentada, reconociendo el papel de las tecnologías como apoyo a dicha gestión.
+
+    \subsection{Modelado 3D y su integración con la realidad aumentada}
+
+        El modelado 3D constituye una base fundamental para el desarrollo de experiencias de realidad aumentada. Se trata de es una representación tridimensional de un objeto usando software especializado que comienza desde la adquisición de datos y termina con un modelo virtual visualmente interactivo mediante el uso de una computadora, \parencite{GHUGE:2023}.
+
+        Según \textcite{GHUGE:2023}, los objetos 3D son cruciales para la creación de experiencias inmersivas en la realidad virtual y la realidad aumentada, en aplicaciones como: turismo virtual, simulaciones de entrenamiento y la narración interactiva. La definición de la realidad aumentada, por su parte, consiste en crear un vínculo directo o provocado por medio de un dispositivo que muestra información electrónica a través de la observación de un entorno y el procesamiento de un software previamente instalado. Como lo menciona \textcite{ARENAS:2022}, la realidad aumentada es la tecnología que pretende integrar y ampliar digitalmente el entorno físico o el mundo del usuario, en tiempo real, añadiendo capas de información digital.
 
         \subsubsection{Representación geométrica}
 
-            Para describir la geometría de un objeto se usa la representación completa, siendo estas implícitas o explícitas, donde las representaciones explícitas pueden subdividirse a su vez en paramétricas y no paramétricas. Algunas formas primitivas tales como: líneas, círculos, planos, esferas, cilindros o figuras cuadráticas, o formas complejas como curvas de Bezier, B-splines y NURBS son catalogadas como representaciones paramétricas, \parencite{PATRAUCEAN:2015}. Sin embargo, en casos complejos donde no pueden ser admitidas formas paramétricas tales como una nube de puntos o mallas polinomiales son catalogadas como representaciones no paramétricas, \parencite{PATRAUCEAN:2015, FOUGEROLLE:2005}.
+            La geometría de un objeto puede describirse mediante dos grandes tipos de representación: implícita y explícita. Dentro de las representaciones explícitas se distinguen, a su vez, las paramétricas y las no paramétricas. Las primeras abarcan tanto formas primitivas como líneas, círculos, planos, esferas, cilindros o figuras cuadráticas como formas más complejas, entre las que se encuentran las curvas de Bezier, B-splines y NURBS \parencite{PATRAUCEAN:2015}. Las representaciones no paramétricas, por su parte, se emplean en casos donde las formas paramétricas resultan insuficientes, siendo ejemplos característicos las nubes de puntos y las mallas polinomiales \parencite{PATRAUCEAN:2015, FOUGEROLLE:2005}.
 
-        \subsubsection{Herramientas para modelado}
+        \subsubsection{Herramientas para modelado 3D}
 
-            Según \textcite{GHUGE:2023}, los objetos 3D son cruciales para la creación de experiencias inmersivas en la realidad virtual y la realidad aumentada, en aplicaciones como: turismo virtual, simulaciones de entrenamiento y la narración interactiva. Estos modelos 3D se crean a partir de un software especializado en modelado paramétrico, que brinda herramientas de diseño paramétricas y técnicas de modelado procedural que permiten a los diseñadores la definición de parámetros, reglas y algoritmos \parencite{GHUGE:2023}. Algunas de las alternativas más populares en el mercado de diseño paramétrico son:
+            Los modelos paramétricos se crean a partir de un software especializado, que brinda herramientas de diseño paramétricas y técnicas de modelado procedural que permiten a los diseñadores la definición de parámetros, reglas y algoritmos \textcite{GHUGE:2023}. Algunas de las alternativas más populares en el mercado de diseño paramétrico son:
 
             \begin{itemize}
 
@@ -63,15 +102,11 @@
                 
             \end{itemize}
 
-        \subsubsection{Uso de modelos 3D en dispositivos móviles de realidad aumentada}
+        \subsubsection{Formatos de modelos 3D para su uso en realidad aumentada}
 
             Para un uso eficiente de los recursos que ofrece un dispositivo móvil tales como: Smartphones, Tablets, o visores de realidad mixta; es necesario el uso de un formato basado en mallas (Mesh), la cual tal como dice \parencite{GHUGE:2023}, es una colección de vértices, ejes y caras, que definen la forma del objeto 3D, donde se incluyen diferentes tipos de mallas tales como: mallas polinomiales, NURBS (Non-Uniform Rational B-Splines) y superficies de subdivisión.
 
-            En una aplicación de realidad aumentada, es indispensable el uso de modelos en tiempo de ejecución para crear dinamismo a la hora de cargar, seleccionar o eliminar objetos según el usuario lo requiera. Para este caso se hace uso de la librería SceneView para Android, que junta un motor de renderizado físico en tiempo real conocido como Filament y el kit de desarrollo de software de realidad aumentada por Google: ARCore. Esta librería utiliza un formato de extensión de modelos .glTF (Graphics Library Transmission Format) o su formato de extensión binario .glb para la carga de modelos en tiempo real, la cual consisten en una jerarquía organizada por nodos existiendo nodos padre y nodos hijos, donde los nodos pueden ser objetos tales como: mallas, máscaras y cámaras. Y las mallas pueden hacer referencia a materiales que a su vez pueden referenciar a texturas donde se incluyen imágenes.
-
-        \subsubsection{Herramientas de exportación de modelos en formato glTF}
-
-            Algunas de las alternativas para la exportación en formato .glTF o .glb, donde se incluyen la animación por fotogramas clave para la locomoción de partes de forma procedural se encuentran:
+            En el contexto de una aplicación de realidad aumentada, la carga dinámica de modelos resulta indispensable para permitir al usuario interactuar con los objetos del entorno, ya sea cargándolos, seleccionándolos o eliminándolos en tiempo real. Para ello, formatos como .glTF (Graphics Library Transmission Format) y su variante binaria .glb ofrecen una solución eficiente, al estructurar los modelos en una jerarquía de nodos, clasificados en nodos padre e hijos, que pueden representar objetos como mallas, máscaras y cámaras. A su vez, estas mallas pueden referenciar materiales asociados a texturas e imágenes. Para la exportación de modelos en estos formatos, incluyendo animaciones por fotogramas clave que permiten la locomoción procedural de partes, se destacan las siguientes alternativas:
 
             \begin{itemize}
 
@@ -81,28 +116,8 @@
                 
             \end{itemize}
 
-    \subsection{Realidad aumentada}
-
-        La definición de la realidad aumentada consiste en crear un vínculo directo o provocado por medio de un dispositivo que muestra información electrónica a través de la observación de un entorno y el procesamiento de un software previamente instalado. Como lo menciona \textcite{ARENAS:2022}, la realidad aumentada es la tecnología que pretende integrar y ampliar digitalmente el entorno físico o el mundo del usuario, en tiempo real, añadiendo capas de información digital.
-
         \subsubsection{Tipos de realidad aumentada}
 
             La realidad aumentada es agrupada en dos categorías basadas por su funcionalidad al momento de su activación, una categoría define la inicialización por medio de activadores y la otra es basada en la visualización o contexto del entorno \parencite{STEWART:2016}. Estas categorías poseen diferentes tipos o métodos de activación sintetizados en la Tabla \ref{tab:augmented_reality_types}.
 
-            \input{assets/tables/augmented_reality_types.tex}
-
-    \subsection{Definición de la información}
-
-        La información resulta de la interpretación humana de datos, a través de alguna clase de manipulación, como la agregación y la relación. Es también la capacidad de establecer un juicio a partir de los datos y tomar decisiones. Según \textcite{LAPIEDRA:2021} la información se puede definir como el conjunto de datos que permiten conocer mejor el entorno de una empresa, organización o persona; con estos se permite disminuir la incertidumbre y, con esto, favorecer a que las decisiones que se tomen sean acertadas. En palabras propias del autor “la información son datos que han sido interpretados y comprendidos por el receptor del mensaje” \parencite[p. 13]{LAPIEDRA:2021}.
-
-        \subsubsection{Gestión de la información}
-
-            \textcite{FONT:2014} describen que la gestión de Información abarca un conjunto de acciones dirigidas a recolectar información que cubra criterios de calidad, pertinencia, oportunidad y costo apropiados de acuerdo a las demandas del usuario; siendo fundamental el uso de las tecnologías de la información y las comunicaciones. Se tiene como objetivo ordenar y emplear la información, que provenga de fuentes tanto internas como externas, con el fin de simplificar su operación, aprendizaje y adaptación a los cambios del entorno.
-
-        \subsubsection{El conocimiento}
-
-            El conocimiento es una mezcla fluida de experiencia enmarcada, valores, información contextual y visión experta que proporciona un marco para evaluar e incorporar nuevas experiencias e información. Se origina y se aplica en la mente de los conocedores. En las organizaciones, a menudo está incluida no sólo en documentos o repositorios, sino también en rutinas, procesos, prácticas y normas organizativas. \textcite{DAVENPORT:1998}.
-
-        \subsubsection{Gestión del conocimiento}
-
-            “La gestión del conocimiento es un enfoque y un conjunto de prácticas empresariales diseñadas para identificar, capturar, organizar, almacenar, compartir y aplicar el conocimiento dentro de una organización.” \parencite[p. 3]{RAMOS:2024}. También es el proceso organizacional que busca la combinación sinérgica del tratamiento de datos e información a través de las capacidades de las tecnologías de información y las capacidades de creatividad, innovación, trabajo en equipo y visión compartida de los seres humanos. \parencite{MALHOTRA:2005}.
+            \input{assets/tables/tab_augmented_reality_types.tex}
