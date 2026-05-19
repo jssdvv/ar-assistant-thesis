@@ -1,0 +1,124 @@
+\begin{figure}[H]%htbp
+
+    \caption{Subsistemas del aplicativo}
+    
+    \centering
+    \begin{tikzpicture}
+
+        % Figures Styles
+        \tikzset{
+            sqr/.style={
+                draw,
+                thick,
+                fill=white,
+                minimum width=0.5cm,
+                minimum height=0.5cm,
+            },
+            crl/.style={
+                draw,
+                circle,
+                thick,
+                fill=white,
+                minimum size=0.25cm
+            }
+        }
+
+        % UML Components Styles
+        \tikzset{
+            pkg/.style 2 args={
+                draw,
+                thick,
+                minimum width=3cm,
+                minimum height=2.5cm,
+                align=center,
+                inner sep=6pt,
+                append after command={
+                    \pgfextra{
+                        \draw[thick]
+                            ([xshift=0.3pt]\tikzlastnode.north west)
+                            -- ++(0,0.5cm)
+                            -- ++(#1,0)
+                            -- ++(0,-0.5cm);
+                        
+                        \node[
+                            anchor=west,
+                            font=\bfseries
+                        ] at ([yshift=2mm]\tikzlastnode.north west) {#2};
+                    }
+                }
+            }
+        }
+
+        \begin{scope}[every node/.style={draw, thick, align=center}]
+
+            \node[
+                fill=white,
+                minimum width=12cm,
+                minimum height=11.5cm,
+            ] (device) at (0,0.5) {};
+
+            \draw (device.north east)
+                -- ++(0.3,0.3)
+                -- ([xshift=0.3cm,yshift=0.3cm]device.north west)
+                -- (device.north west);
+            
+            \draw (device.north east)
+                -- ++(0.3,0.3)
+                -- ([xshift=0.3cm,yshift=0.3cm]device.south east)
+                -- (device.south east);
+
+            \node[
+                anchor=east,
+                draw=none,
+                font=\bfseries
+            ] at ([yshift=-0.4cm]device.north east) {Dispositivo Móvil};
+
+        \end{scope}
+
+        \node[
+            pkg={2.2cm}{Aplicación},
+            minimum width=11cm,
+            minimum height=10cm
+        ] (pkg_application)             at (0.0,0.25)    {};
+
+        \node[pkg={1cm}{}]
+            (pkg_core)                  at (-3.5,0.0)    {Core\\{(Núcleo)}};
+
+        \node[pkg={1cm}{}]
+            (pkg_schedule)              at (0.0,3.25)    {Schedule\\{(Cronograma)}};
+
+        \node[pkg={1cm}{}]
+            (pkg_scanner)               at (3.5,0.0)     {Scanner\\{(Escáner)}};
+
+        \node[pkg={1cm}{}]
+            (pkg_machines)              at (0.0,-3.25)   {Machines\\{(Máquinas)}};
+
+
+        \node[crl] (crl_connector)      at (0.0,0.0)    {};
+
+        \node[sqr]   (sqr_core)         at (-2.0,0.0)   {};
+        \node[sqr]   (sqr_schedule)     at (0.0,2.0)    {};
+        \node[sqr]   (sqr_scanner)      at (2.0,0.0)    {};
+        \node[sqr]   (sqr_machines)     at (0.0,-2.0)   {};
+        
+        \draw[thick,-] (sqr_core) -- (crl_connector);
+
+        % https://tikz.dev/tikz-arrows
+
+        \draw[thick,densely dashed,-{Straight Barb[]}] (crl_connector) -- (0.0,1.0);
+        \draw[thick,densely dashed,-{Straight Barb[]}] (crl_connector) -- (1.0,0.0);
+        \draw[thick,densely dashed,-{Straight Barb[]}] (crl_connector) -- (0.0,-1.0);
+
+        \draw[thick] (0.25,1.0) arc (0:180:0.25);
+        \draw[thick] (1.0,-0.25) arc (-90:90:0.25);
+        \draw[thick] (0.25,-1.0) arc (0:-180:0.25);
+
+        \draw[thick,-] (0.0,1.25) -- (sqr_schedule);
+        \draw[thick,-] (1.25,0.0) -- (sqr_scanner);
+        \draw[thick,-] (0.0,-1.25) -- (sqr_machines);
+
+    \end{tikzpicture}
+    \label{fig:subsystems}
+    
+\end{figure}
+\vspace{-0.6\baselineskip}

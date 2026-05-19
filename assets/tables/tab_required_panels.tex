@@ -1,0 +1,78 @@
+\begin{ThreePartTable}
+
+    \renewcommand\TPTminimum{\textwidth}
+
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+    \setlength\tabcolsep{3pt}
+
+    \begin{longtable}{@{}P{0.2\textwidth}P{0.35\textwidth}P{0.45\textwidth} @{}}
+
+        \caption{Paneles requeridos para el aplicativo} \label{tab:required_panels} \\
+
+        \toprule
+        \textbf{Panel} &
+            \textbf{Descripción} &
+                \textbf{Ventajas} \\
+        \toprule
+        \endfirsthead
+        
+        \multicolumn{3}{r}{\textit{(Continuación de la tabla~\ref{tab:required_panels})}} \\
+        \toprule
+        \textbf{Panel} &
+            \textbf{Descripción} &
+                \textbf{Ventajas} \\
+        \toprule
+        \endhead
+
+        \midrule[\heavyrulewidth]
+        \multicolumn{3}{r}{\textit{Continúa en la siguiente página}}\\
+        \endfoot
+
+        \bottomrule
+        %\insertTableNotes\\
+        \endlastfoot
+
+        \multirow{4}{\linewidth}{Panel para el manejo de la información técnica} &
+            \multirow{4}{\linewidth}{Presenta una interfaz de gestión de datos técnicos como eje central en el almacenamiento de la información de las máquinas} &
+                Permite el ingreso de datos básicos identificativos de una máquina y su motor así como una imagen ilustrativa de la máquina \\
+                \cline{3-3} & &
+                Permite la subida y envio de documentos técnicos de una máquina en formato PDF \\
+                \cline{3-3} & &
+                Permite el ingreso de especificaciones técnicas de la máquina y su motor \\
+                \cline{3-3} & &
+                Permite el ingreso de datos básicos de los proveedores asociados a la máquina \\
+
+        \midrule
+
+        \multirow{4}{\linewidth}{Panel para la realización de los procedimientos} &
+            \multirow{4}{\linewidth}{Presenta una interfaz de edición y ejecución de las diferentes actividades de mantenimiento con el uso de realidad aumentada} &
+                Permite la gestión de modelos 3D en formato .glb \\
+                \cline{3-3} & &
+                Permite la gestión y visualización de imágenes en los procedimientos de realidad aumentada \\
+                \cline{3-3} & & 
+                Permite la creación, edición y ejecución de las actividades de mantenimiento como secuencia \\
+                \cline{3-3} & &
+                Permite la gestión de marcadores de códigos QR y su exportación en formato PDF \\
+
+        \midrule
+
+        \multirow{2}{\linewidth}{Panel de cronograma de eventos} &
+            \multirow{2}{\linewidth}{Presenta una interfaz para el registro de eventos de las intervenciones de mantenimiento, facilitando la periodicidad} &
+                Permite el registro de eventos con fechas específicas \\
+                \cline{3-3} & &
+                Implementa un sistema de notificaciones del dispositivo Android \\
+
+        \midrule
+
+        \multirow{3}{\linewidth}{Panel de escaner de códigos QR} &
+            \multirow{3}{\linewidth}{Presenta una interfaz de cámara que detecta los diferentes marcadores como códigos QR y facilita la navegación a los detalles de las máquinas} &
+                Los marcadores aparecen como objetos cliqueables resaltados \\
+                \cline{3-3} & &
+                Incorpora hipervinculos de facil navegación \\
+                \cline{3-3} & &
+                Incorpora uso de la linterna para situaciones de baja iluminación \\
+
+    \end{longtable}
+
+\end{ThreePartTable}
