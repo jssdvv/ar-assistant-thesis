@@ -46,7 +46,7 @@
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[spanish]{babel}
+\RequirePackage[english, spanish, es-tabla]{babel}
 \RequirePackage{etoolbox}                   % Logic Conditions
 \RequirePackage{fancyhdr}                   % Headers
 \RequirePackage{titlesec}                   % Titles
