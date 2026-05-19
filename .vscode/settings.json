@@ -8,10 +8,51 @@
         "ara.sty",
         "ara.cls",
         "ara.bib",
-        "template.bib"
+        "template.bib",
+        "build/**"
     ],
     "cSpell.ignoreRegExpList": [
         "\\\\textcite(?:\\[[^\\]]*\\])?\\{[^}]*\\}",
         "\\\\parencite(?:\\[[^\\]]*\\])?\\{[^}]*\\}"
-    ]
+    ],
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.auxDir": "%OUTDIR%/auxiliar",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.tools": [
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-pdflatex=pdflatex",
+                "-e", "$biber='biber --input-directory %AUXDIR% --output-directory %AUXDIR% %B'",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex * 2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
 }
