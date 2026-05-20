@@ -54,57 +54,41 @@
 
     \subsection{Diseño de la base de datos}
 
-        El diseño de la base de datos está basado en SQLite con el uso de la librería Room para Android, estructurándose en tablas de entidades y tablas intermedias según la naturaleza de los datos almacenados.
+        El diseño de la base de datos está basado en SQLite mediante el uso de la librería Room para Android, estructurándose en tablas de entidades simples y tablas de entidades compuestas según la naturaleza de los datos almacenados.
 
-        \subsubsection{Tablas de entidades}
+        \subsubsection{Tablas de entidades simples}
 
             Las tablas de entidades almacenan los datos individuales de un objeto en específico, agrupándose según su propósito funcional.
 
-            \paragraph{Entidades de información técnica.} Almacenan los datos de identificación y especificaciones técnicas de la máquina y su motor eléctrico. Cada equipo separa su información en dos tablas: una de identidad y otra de especificaciones, dado el volumen de atributos que cada una maneja. Adicionalmente, se incluye una entidad para los documentos PDF vinculados a cada máquina.
+            \paragraph{Entidades de información técnica.} Almacenan los datos de identificación y especificaciones técnicas de la máquina y su motor eléctrico (ver Apéndices \ref{apc:entity_machine_and_specs} y \ref{apc:entity_motor_and_specs}). Cada equipo separa su información en dos tablas: una de identidad y otra de especificaciones, dado el volumen de atributos que cada una maneja. Adicionalmente, se incluye una entidad para los documentos PDF vinculados a cada máquina (ver Apéndice \ref{apc:entity_document}).
 
-                \input{assets/figures/second_phase/entity/fig_entity_machine_and_specs.tex}
+            \paragraph{Entidades de realidad aumentada.} Almacenan los datos de los elementos aumentados vinculados a cada máquina: los marcadores físicos que activan la experiencia de realidad aumentada y los modelos 3D superpuestos (ver Apéndice \ref{apc:entities_augmented_reality}). La entidad de marcador incluye un desplazamiento (offset) que define su posición relativa respecto a un nodo origen, el cual sirve como referencia común para alinear todos los modelos dentro de una escena. Por su parte, la entidad de modelo cuenta igualmente con un desplazamiento, pero este es relativo al propio nodo origen, permitiendo que cada modelo sea posicionado correctamente una vez dicho nodo se encuentre establecido en la escena.
 
-                \input{assets/figures/second_phase/entity/fig_entity_motor_and_specs.tex}
+            \paragraph{Entidades de procesos de mantenimiento.} Conforman una estructura secuencial que contiene la información sobre los procedimientos de mantenimiento asociados a cada máquina (ver Apéndice \ref{apc:entities_processes}).
 
-                \input{assets/figures/second_phase/entity/fig_entity_document.tex}
+            \paragraph{Entidades de catálogo.} Almacenan datos reutilizables de forma global, sin vínculo directo a una máquina en particular. En este caso, corresponden al catálogo de herramientas disponibles durante las actividades de mantenimiento, cada una con representación visual vectorial según su tipo (ver Apéndice \ref{apc:entities_catalogue}).
 
-            \paragraph{Entidades de realidad aumentada.} Almacenan los datos de los elementos aumentados vinculados a cada máquina: los marcadores físicos que activan la experiencia AR y los modelos 3D superpuestos. Ambas entidades incluyen offsets de posición y rotación expresados en coordenadas cartesianas y cuaterniones, necesarios para su calibración espacial.
+            \paragraph{Entidad de cronograma.} Almacena los eventos de mantenimiento programados, cada uno vinculado a una actividad específica dentro del subsistema de máquinas. Gestiona tanto la recurrencia como la programación temporal de dichos eventos (ver Apéndice \ref{apc:entities_events}).
 
-                \input{assets/figures/second_phase/entity/fig_entity_marker.tex}
+        \subsubsection{Tablas de entidades compuestas}
 
-                \input{assets/figures/second_phase/entity/fig_entity_model.tex}
+            Las tablas de entidades compuestas almacenan los registros de relaciones entre múltiples entidades, consolidando las llaves primarias (PK) de las entidades referenciadas para representar asociaciones de tipo muchos a muchos (N:N).
 
-            \paragraph{Entidades de procesos de mantenimiento.} Conforman una cadena jerárquica que estructura los procedimientos de mantenimiento: una actividad agrupa pasos ordenados, cada paso contiene operaciones que definen las animaciones 3D ejecutadas sobre los modelos durante la experiencia de realidad aumentada.
-
-                \input{assets/figures/second_phase/entity/fig_entity_activity.tex}
-
-                \input{assets/figures/second_phase/entity/fig_entity_step.tex}
-
-                %\input{assets/figures/second_phase/entity/fig_entity_operation.tex}
-
-            \paragraph{Entidades de catálogo.} Almacenan datos reutilizables globalmente, sin vínculo directo a una máquina en particular. En este caso, el catálogo de herramientas disponibles durante las actividades de mantenimiento, cada una con representación visual vectorial según su tipo.
-
-                %\input{assets/figures/second_phase/entity/fig_entity_tool.tex}
-
-            \paragraph{Entidad de cronograma.} Almacena los eventos de mantenimiento programados, cada uno vinculado a una actividad específica del subsistema de máquinas. Gestiona la recurrencia y la programación temporal de dichos eventos.
-
-                %\input{assets/figures/second_phase/entity/fig_entity_event.tex}
-
-        \subsubsection{Tablas intermedias}
-
-            Se encargan de almacenar los registros de la relación entre múltiples entidades de un tipo a múltiples entidades de otro tipo donde se juntan las llaves primarias (PK) de las entidades referenciadas como se muestra en la Figura %\ref{fig:cross_ref_machine_supplier} y la Figura \ref{fig:cross_ref_animation_renderable_visibility}.
-
-            %\input{assets/figures/entity_pivot_composite.tex}
+            \paragraph{Entidad de referencia para edición de modelos 3D en una operación.} Almacena la referencia de las partes de un modelo 3D asociadas a una operación de mantenimiento específica, actuando como tabla pivote entre la entidad de operación y la entidad de modelo (ver Apéndice \ref{apc:entity_edition}).
 
         \subsubsection{Modelo de relaciones}
 
-            Comúnmente las relaciones entre las entidades son de tipo uno a uno (1:1) o de uno a muchos (1:N), donde describen que registros de una tabla de entidad primaria están vinculados a uno o múltiples registros de una tabla secundaria respectivamente. Estas relaciones se definen mediante una llave primaria (PK) en la tabla principal que conecta a una llave foránea (FK) en la tabla secundaria como se muestra en la Figura \ref{fig:relation_entities}.
+            \paragraph{Relaciones de la entidad de máquinas.} El punto primario de las relaciones es la entidad de máquinas, la cual se vincula a entidades que almacenan datos técnicos, especificaciones y referencias a múltiples tareas. Estas relaciones se basan en llaves primarias (PK) y llaves foráneas (FK), siendo comúnmente de tipo uno a uno (1:1) o uno a muchos (1:N), como se muestra en la Figura \ref{fig:relation_machine_entities}.
 
-            \input{assets/figures/second_phase/relation/fig_relation_entities.tex}
+            \input{assets/figures/second_phase/relation/fig_relation_machine_entities.tex}
 
-            Sin embargo, cuando tenemos relaciones de mucho a muchos (N:N) entre diferentes tablas de entidades, es necesaria la intervención de una tabla intermedia que describa este tipo de relación, siendo esta una tabla de referencia cruzada o una tabla compuesta como se muestra en la Figura %%%%%%%%%%%%%% y la Figura \ref{fig:relation_between_animations_renderables_steps}.
+            \paragraph{Relaciones de la cadena jerárquica de mantenimiento.} Para el mantenimiento de una máquina se conforma una cadena jerárquica que estructura los procedimientos: una actividad agrupa pasos ordenados, y cada paso contiene operaciones que definen las animaciones 3D ejecutadas sobre los modelos durante la experiencia de realidad aumentada, como se muestra en la Figura \ref{fig:relation_activity_entities}.
 
-            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% input nuevo
+            \input{assets/figures/second_phase/relation/fig_relation_activity_entities.tex}
+
+            \paragraph{Relación pivote entre operaciones y modelos 3D.} La edición de un proceso de mantenimiento requiere almacenar de forma independiente la referencia de cada subparte o submodelo de un modelo 3D, entendiéndose estas como las partes individuales sobre las cuales se aplica la animación especificada en una operación. Para ello, se emplea una entidad pivote que se relaciona de forma muchos a muchos (N:N) entre la entidad de operación y la entidad de modelo, como se muestra en la Figura \ref{fig:relation_pivot_entities}.
+
+            \input{assets/figures/second_phase/relation/fig_relation_pivot_entities.tex}
 
     \subsection{Secuencias de los procedimientos}
 
