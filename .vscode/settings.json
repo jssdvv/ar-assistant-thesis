@@ -19,6 +19,7 @@
     "latex-workshop.latex.auxDir": "%OUTDIR%/auxiliar",
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.latex.recipe.default": "first",
     "latex-workshop.latex.tools": [
         {
