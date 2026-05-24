@@ -53,43 +53,13 @@
 \RequirePackage{enumitem}                   % Lists
 \RequirePackage{fancyvrb,fvextra}           % Advanced Verbatim
 \RequirePackage{tocloft}                    
-\RequirePackage{calc}                       
-
-% ╔══════════════════════════════════════════════════════════════════════════════╗
-% ║                                                                              ║
-% ║                                   MARGINS                                    ║
-% ║                                                                              ║
-% ║   https://www.overleaf.com/learn/latex/Lengths_in_LaTeX                      ║
-% ║   https://www.overleaf.com/learn/latex/Page_size_and_margins                 ║
-% ║                                                                              ║
-% ╚══════════════════════════════════════════════════════════════════════════════╝
-
-% GENERAL
-
-\setlength{\hoffset}{0in}                   % Initial Horizontal Offset
-\setlength{\voffset}{0in}                   % Initial Vertical Offset
-
-% TEXT
-
-\setlength{\oddsidemargin}{0in}             % Left Side Margin Odd Page
-\setlength{\evensidemargin}{0in}            % Left Side Margin Even Page
-\setlength{\textwidth}{\paperwidth-2in}     % Text Area Width
-\setlength{\textheight}{\paperheight-2in}   % Text Area Height
-
-% NOTES
-
-\setlength{\marginparwidth}{0in}            % Notes Area Width
-\setlength{\marginparsep}{0in}              % Left Margin And Right Text Area Margin
-
-% HEADER
-
-\setlength{\headheight}{12pt}               % Header Area Height
-\setlength{\topmargin}{-0.5in}              % Top Margin And Vertical Offset Separation
-\setlength{\headsep}{-\topmargin-\headheight}
-
-% FOOTER
-
-\setlength{\footskip}{0.5in}
+\RequirePackage{calc}    
+\RequirePackage[
+    margin=1in,
+    nomarginpar,
+    footskip=0.5in,
+    headheight=15pt
+]{geometry}                                 % Margins     
 
 % LINE BREAKS
 
@@ -108,7 +78,7 @@
 \titlespacing{\section}{0pt}{*0}{\baselineskip}
 \titlespacing{\subsection}{0pt}{*0}{*0}
 \titlespacing{\subsubsection}{0pt}{*0}{*0}
-\titlespacing{\paragraph}{0.5in}{*0}{1ex}
+\titlespacing{\paragraph}{0.5in}{*0}{1ex}[0pt]
 \titlespacing{\subparagraph}{0.5in}{*0}{1ex}
 
 % TEXT
