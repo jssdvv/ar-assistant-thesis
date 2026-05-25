@@ -61,6 +61,15 @@
     headheight=15pt
 ]{geometry}                                 % Margins     
 
+\RequirePackage{xfp}
+
+% remove space after figure with formula:
+
+\newcommand{\fixvspace}[1]{%
+    \vspace{-\fpeval{0.6 + #1}\baselineskip}%
+}
+
+
 % LINE BREAKS
 
 \fvset{breaklines=true}
