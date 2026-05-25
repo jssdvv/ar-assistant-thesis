@@ -1,10 +1,53 @@
 \begin{figure}[H]
 
-    \caption{Nodo de plano}
-
+    \caption{Estados del nodo de plano}
     \centering
-    \includegraphics[width=0.4\textwidth]{assets/figures/second_phase/node/img_node_plane.png}
+
+    \setlength{\tabcolsep}{0pt}
+    \renewcommand{\arraystretch}{1.2}
+
+    \begin{tabular}{
+        |>{\centering\arraybackslash}m{0.333\textwidth}
+        |>{\centering\arraybackslash}m{0.333\textwidth}
+        |>{\centering\arraybackslash}m{0.333\textwidth}|
+    }
+
+        \hline
+
+        \rule{0pt}{4cm}
+        \includegraphics[width=0.30\textwidth]
+        {assets/figures/second_phase/node/img_node_plane_green.png}
+
+        &
+
+        \rule{0pt}{4cm}
+        \includegraphics[width=0.30\textwidth]
+        {assets/figures/second_phase/node/img_node_plane_yellow.png}
+
+        &
+
+        \rule{0pt}{4cm}
+        \includegraphics[width=0.30\textwidth]
+        {assets/figures/second_phase/node/img_node_plane_red.png}
+
+        \\
+
+        \rule{0pt}{0.8cm}
+        \small Seguimiento activo del marcador
+
+        &
+
+        \rule{0pt}{0.8cm}
+        \small Pérdida temporal del seguimiento
+
+        &
+
+        \rule{0pt}{0.8cm}
+        \small Pérdida total del seguimiento
+
+        \\ \hline
+    \end{tabular}
     \label{fig:node_plane}
     
 \end{figure}
-\vspace{-0.4\baselineskip}
+\fixvspace{0}

@@ -1,12 +1,28 @@
 \begin{figure}[H]
 
-    \caption{Nodo de imagen aumentada}
+    \caption{Nodo de marcador}
 
     \centering
-    \includegraphics[width=0.4\textwidth]{assets/figures/second_phase/node/img_node_augmented_image.png}
+
+    \setlength{\tabcolsep}{0pt}
+    \renewcommand{\arraystretch}{1}
+
+    \begin{tabular}{
+    |>{\centering\arraybackslash}m{0.42\textwidth}|
+    }
+        \hline
+
+        \rule{0pt}{0.02\textwidth}
+
+        \includegraphics[width=0.38\textwidth]
+        {assets/figures/second_phase/node/img_node_augmented_image.png}
+
+        \\[0.04\textwidth] \hline
+
+    \end{tabular}
     \label{fig:node_augmented_image}
     
-    \caption*{\textit{Nota}. \textnormal{La imagen del marcador corresponde a un objeto real y solo ilustra la transformación del nodo de imagen aumentada; no es un plano virtual.}}
+    \caption*{\textit{Nota}. \textnormal{La imagen sólo ilustra la transformación detectada de un marcador físico, este nodo no añade un nodo de control de transformación (\textit{gizmo}).}}
 
 \end{figure}
-\vspace{-0.4\baselineskip}
+\fixvspace{0.5}
