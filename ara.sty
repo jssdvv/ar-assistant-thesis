@@ -17,6 +17,7 @@
 \usepackage{caption}            % Captions
 \usepackage{array}              % Columns
 \usepackage{float}
+\usepackage{pgfkeys}
 %\usepackage{showframe}         % Margins
 
 % FIGURES
@@ -130,15 +131,9 @@
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\captionsetup[table]{
-    format=plain,
-    labelfont=bf,
-    textfont=it,
-    labelsep=newline,
-    font={normalsize,doublespacing},
-    justification=raggedright,
-    singlelinecheck=false
-}
+\setlength{\extrarowheight}{0pt}
+\setlength{\belowrulesep}{0pt}
+\setlength{\aboverulesep}{0pt}
 
 % NAME
 
@@ -161,7 +156,7 @@
 % ║                                                                              ║
 % ╚══════════════════════════════════════════════════════════════════════════════╝
 
-\captionsetup[figure]{
+\captionsetup{
     format=plain,
     labelfont=bf,
     textfont=it,
@@ -173,6 +168,24 @@
 
 \setlength{\textfloatsep}{0pt}
 \raggedbottom
+
+
+\pgfkeys{
+    /borderedgraphics/.is family,
+    /borderedgraphics,
+    width/.initial = \textwidth,
+    rule/.initial = 0.4pt,
+    default/.style = {width=\textwidth, rule=0.4pt}
+}
+
+\newcommand{\borderedgraphics}[2][]{%
+    \pgfkeys{/borderedgraphics, default, #1}%
+    {%
+        \setlength{\fboxsep}{0pt}%
+        \setlength{\fboxrule}{\pgfkeysvalueof{/borderedgraphics/rule}}%
+        \fbox{\includegraphics[width=\dimexpr\pgfkeysvalueof{/borderedgraphics/width}-2\fboxrule\relax]{#2}}%
+    }%
+}
 
 % NAME
 
