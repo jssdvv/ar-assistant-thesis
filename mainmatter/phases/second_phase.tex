@@ -134,13 +134,11 @@
 
         \subsubsection{Sistema de coordenadas de la escena}
 
-            Durante la implementación de la escena de realidad aumentada fue necesario trabajar con el sistema de coordenadas utilizado por ARCore y los dispositivos Android para garantizar el posicionamiento correcto de los modelos tridimensionales. Este sistema corresponde a un esquema de coordenadas de mano derecha definido respecto a la orientación natural de la pantalla del dispositivo (ver Figuras \ref{fig:coordinate_system_portrait} y \ref{fig:coordinate_system_landscape}).
+            Durante la implementación de la escena de realidad aumentada fue necesario trabajar con el sistema de coordenadas utilizado por ARCore y los dispositivos Android para garantizar el posicionamiento correcto de los modelos tridimensionales. Este sistema corresponde a un esquema de coordenadas de mano derecha definido respecto a la orientación natural de la pantalla del dispositivo (ver Figura \ref{fig:coordinate_system_devices}).
 
             Dentro de este sistema, el eje X se extiende horizontalmente hacia la derecha de la pantalla, el eje Y verticalmente hacia arriba y el eje Z perpendicular al plano de la pantalla en dirección al usuario.
 
-            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_protrait.tex}
-            
-            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_landscape.tex}
+            \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_devices.tex}
             
             Durante las pruebas de posicionamiento se observó que la orientación física del dispositivo no altera la definición de los ejes del sistema de coordenadas. Esto permitió mantener la alineación vertical de los modelos respecto al suelo al iniciar sesiones de realidad aumentada, independientemente de la dirección hacia la cual estuviera orientada la cámara, como se muestra en la Figura \ref{fig:coordinate_system_scene}.
 
@@ -194,17 +192,17 @@
             
                 Este comportamiento permite obtener la transformación asociada a un marcador físico detectado dentro de la escena (ver Figura \ref{fig:node_augmented_image}) y utilizarla posteriormente para el reposicionamiento dinámico de modelos tridimensionales durante las sesiones de realidad aumentada.
 
-                \input{assets/figures/second_phase/node/fig_node_augmented_image.tex} %cambiar esta imagen a una con un celular donde se muestra el gizmo dentro del celular pero, el marcador fuera sin gizmo
+                \input{assets/figures/second_phase/node/fig_node_marker.tex}
 
                 \subparagraph{Nodo de plano.}
 
-                    Representa una geometría plana, formando parte del nodo de marcador. Fue utilizado como representación visual del estado de seguimiento de una imagen aumentada detectada mediante la cámara del dispositivo, utilizando un esquema de materiales basado en colores: verde para indicar seguimiento activo del marcador, amarillo para indicar pérdida temporal de seguimiento conservando la última posición detectada y rojo para indicar pérdida total tanto del seguimiento como de la última posición registrada del marcador (ver Figura \ref{fig:node_plane}).
+                    Representa una geometría plana superpuesta al nodo de marcador utilizado como representación visual del estado de seguimiento de una imagen aumentada detectada mediante la cámara del dispositivo. Usa un esquema de materiales basado en colores: verde para indicar seguimiento activo del marcador, amarillo para indicar pérdida temporal de seguimiento conservando la última posición detectada y rojo para indicar pérdida total tanto del seguimiento como de la última posición registrada del marcador (ver Figura \ref{fig:node_plane}).
 
                     \input{assets/figures/second_phase/node/fig_node_plane.tex}
 
             \paragraph{Nodo de caja.}
             
-                También conocido como caja delimitadora, corresponde a la representación visual de selección de submodelos tridimensionales mediante un nodo geométrico de caja dentro de la escena de realidad aumentada (ver Figura \ref{fig:node_box}).
+                También conocido como caja delimitadora, corresponde a la representación visual de selección de submodelos tridimensionales mediante un nodo geométrico de caja que envuelve y delimita el elemento seleccionado dentro de la escena de realidad aumentada (ver Figura \ref{fig:node_box}).
 
                 \input{assets/figures/second_phase/node/fig_node_box.tex}
 
