@@ -2,11 +2,11 @@
 
     El presente proyecto tiene como objetivo principal un desarrollo tecnológico aplicado al campo del mantenimiento industrial. Lo anterior implica la combinación de varios conceptos que sirven como guía, tanto para el proceso de diseño como para la comprensión del alcance del mismo. A continuación, se presenta un esquema de la estructura conceptual sobre la cual se elaboró el marco teórico y, en consecuencia, se llevó a cabo el ya mencionado desarrollo tecnológico:
 
-    %%Figura conceptual
+    \input{assets/figures/theoretical_framework/fig_project_schema.tex}
 
     \subsection{Mantenimiento industrial}
 
-        El mantenimiento industrial constituye una función fundamental dentro de la gestión de los sistemas productivos de las empresas, ya que permite asegurar aspectos como la disponibilidad, confiabilidad y seguridad de los equipos e instalaciones a lo largo del tiempo. La normativa de la Unión Europea define al mantenimiento como la “combinación de todas las acciones técnicas, administrativas y de gestión realizadas durante el ciclo de vida de un elemento, destinadas a conservar o a devolverlo a un estado en el que pueda desempeñar la función requerida”. \parencite{UNE:2018}.
+        El mantenimiento industrial constituye una función fundamental dentro de la gestión de los sistemas productivos de las empresas, ya que permite asegurar aspectos como la disponibilidad, confiabilidad y seguridad de los equipos e instalaciones a lo largo del tiempo. La normativa de la Unión Europea define al mantenimiento como la “combinación de todas las acciones técnicas, administrativas y de gestión realizadas durante el ciclo de vida de un elemento, destinadas a conservar o a devolverlo a un estado en el que pueda desempeñar la función requerida” \parencite{UNE:2018}.
 
         El mantenimiento se puede clasificar según si se actúa previa o posteriormente al evento de una falla de un equipo. En la Figura \ref{fig:maintenance_categories} se muestra el esquema de dicha clasificación, con los nombres con los que se conocen a estas formas de abordar las acciones de mantención:
 
@@ -40,9 +40,7 @@
 
     \subsection{La información en entornos de mantenimiento}
 
-        La información se puede definir como el conjunto de datos que permiten conocer mejor el entorno de una empresa y con estos se disminuye la incertidumbre a la vez que se favorece la toma de decisiones acertadas, \textcite{LAPIEDRA:2021}. De acuerdo con \textcite{AENOR:2016}, el registro de datos generado tras la ejecución de actividades de mantenimiento constituye una herramienta de valor para el ingeniero de mantenimiento y el responsable de confiabilidad, particularmente en la estimación de la disponibilidad de los equipos. Algunos ejemplos de la utilidad de esta información se presentan en la Tabla \ref{tab:maintenance_information_utility}. Entre los datos más relevantes que conviene registrar tras cada intervención se encuentran los listados en la Tabla \ref{tab:maintenance_data}.
-
-        \input{assets/tables/tab_maintenance_information_utility.tex}
+        La información se puede definir como el conjunto de datos que permiten conocer mejor el entorno de una empresa y con estos se disminuye la incertidumbre a la vez que se favorece la toma de decisiones acertadas, \textcite{LAPIEDRA:2021}. De acuerdo con \textcite{AENOR:2016}, el registro de datos generado tras la ejecución de actividades de mantenimiento constituye una herramienta de valor para el ingeniero de mantenimiento y el responsable de confiabilidad, particularmente en la estimación de la disponibilidad de los equipos. Entre los datos más relevantes que conviene registrar por cada máquina, se encuentran los listados en la Tabla \ref{tab:maintenance_data}.
 
         \input{assets/tables/tab_maintenance_data.tex}
 
@@ -60,9 +58,9 @@
         
         \subsubsection{Gestión del conocimiento}
 
-            El conocimiento es una mezcla fluida de experiencia enmarcada, valores, información contextual y visión experta que proporciona un marco para evaluar e incorporar nuevas experiencias e información. Se origina y se aplica en la mente de los conocedores. En las organizaciones, a menudo está incluida no sólo en documentos o repositorios, sino también en rutinas, procesos, prácticas y normas organizativas. \textcite{DAVENPORT:1998}.
+            En el contexto organizacional, el conocimiento representa uno de los activos más valiosos con los que cuenta una empresa, pues a diferencia de otros recursos, no se agota con su uso sino que se enriquece con la práctica y la experiencia acumulada. Su naturaleza es compleja y multidimensional, y como señalan \textcite{DAVENPORT:1998}, puede entenderse como una mezcla de experiencia enmarcada, valores, información contextual y visión experta que proporciona un marco para evaluar e incorporar nuevas experiencias e información; y que en las organizaciones no reside únicamente en documentos o repositorios, sino también en rutinas, procesos, prácticas y normas organizativas.
 
-            Por otro lado “La gestión del conocimiento es un enfoque y un conjunto de prácticas empresariales diseñadas para identificar, capturar, organizar, almacenar, compartir y aplicar el conocimiento dentro de una organización.” \parencite[p. 3]{RAMOS:2024}. También es el proceso organizacional que busca la combinación sinérgica del tratamiento de datos e información a través de las capacidades de las tecnologías de información y las capacidades de creatividad, innovación, trabajo en equipo y visión compartida de los seres humanos. \parencite{MALHOTRA:2005}.
+            El reconocer al conocimiento como un elemento vivo, distribuido y propio del recurso humano dentro de las organizaciones, es precisamente lo que genera la necesidad de gestionarlo de manera estratégica, dando lugar así al concepto de gestión del conocimiento. La gestión del conocimiento se define como “un enfoque y un conjunto de prácticas empresariales diseñadas para identificar, capturar, organizar, almacenar, compartir y aplicar el conocimiento dentro de una organización.” \parencite[p. 3]{RAMOS:2024}. Su alcance, sin embargo, va más allá de la simple administración de información, ya que implica la articulación de procesos, personas y tecnologías para favorecer la creación y el aprovechamiento del conocimiento. En este sentido, se concibe también como un proceso en el cual se busca la combinación sinérgica del tratamiento de datos e información a través de las capacidades de las tecnologías de información y las capacidades de creatividad, innovación, trabajo en equipo y visión compartida de los seres humanos \parencite{MALHOTRA:2005}.
 
         \subsubsection{Sistema de gestión de conocimiento}
 
@@ -70,11 +68,11 @@
 
             También se hace énfasis en la necesidad de incluir actividades y comportamientos para la transferencia de conocimientos listando cuatro ítems, siendo uno de ellos denominado la combinación donde se busca “sintetizar, conservar, formalizar, estructurar o clasificar el conocimiento codificado, haciendo que este sea accesible y fácil de encontrar” \parencite[p. 7]{ICONTEC:2019}. Con lo anterior, se identifican puntos de convergencia entre la gestión del conocimiento en mantenimiento y el planteamiento de soluciones tecnológicas como la realidad aumentada, reconociendo el papel de las tecnologías como apoyo a dicha gestión.
 
-    \subsection{Modelado 3D y su integración con la realidad aumentada}
+    \subsection{Modelos 3D y su integración con la realidad aumentada}
 
-        El modelado 3D constituye una base fundamental para el desarrollo de experiencias de realidad aumentada. Se trata de es una representación tridimensional de un objeto usando software especializado que comienza desde la adquisición de datos y termina con un modelo virtual visualmente interactivo mediante el uso de una computadora, \parencite{GHUGE:2023}.
+        El modelado 3D constituye una base fundamental para el desarrollo de experiencias de realidad aumentada. Se trata de una representación tridimensional de un objeto mediante software especializado cuyo proceso incia desde la adquisición de datos y culmina con un modelo virtual visualmente interactivo a través de una computadora, \parencite{GHUGE:2023}.
 
-        Según \textcite{GHUGE:2023}, los objetos 3D son cruciales para la creación de experiencias inmersivas en la realidad virtual y la realidad aumentada, en aplicaciones como: turismo virtual, simulaciones de entrenamiento y la narración interactiva. La definición de la realidad aumentada, por su parte, consiste en crear un vínculo directo o provocado por medio de un dispositivo que muestra información electrónica a través de la observación de un entorno y el procesamiento de un software previamente instalado. Como lo menciona \textcite{ARENAS:2022}, la realidad aumentada es la tecnología que pretende integrar y ampliar digitalmente el entorno físico o el mundo del usuario, en tiempo real, añadiendo capas de información digital.
+        La importancia de los modelos 3D radica en su capacidad para enriquecer la interacción y la inmersión dentro de entornos virtuales y aumentados. En este sentido, \textcite{GHUGE:2023} señala que los objetos 3D son cruciales para la creación de experiencias inmersivas en aplicaciones como el turismo virtual, las simulaciones de entrenamiento y la narración interactiva. Dado que estos modelos suelen emplearse como elementos digitales superpuestos al entorno real, resulta necesario comprender el concepto de realidad aumentada. En este contexto, \textcite{ARENAS:2022} la define como una tecnología que integra y amplía digitalmente el entorno físico del usuario en tiempo real mediante la incorporación de capas de información digital.
 
         \subsubsection{Representación geométrica}
 
