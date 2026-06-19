@@ -1,34 +1,32 @@
 \section{Definición de requerimientos y restricciones}
 
-    En esta fase se realizó una búsqueda en la literatura para establecer la estructura y dirección del proyecto, así como la incidencia del desarrollo tecnológico propuesto en determinados aspectos del mantenimiento, principalmente del sistema de información. Habiendo definido el mantenimiento preventivo en la sección \ref{subsec:preventive_maintenance}, se sabe que cuando una empresa trabaja en función de esta filosofía o metodología para controlar las actividades de manutención existe el manejo de cierta documentación técnica y logística, donde son de interés temas que rodean a la gestión de la información de mantenimiento, tanto en términos organizativos como en la sistematización del mismo.
+    En este capítulo se describe la metodología seguida para definir la dirección y estructura del desarrollo del aplicativo. Partiendo de una revisión de la literatura enfocada principalmente al mantenimiento preventivo y a los aspectos relacionados al manejo de la información, se planteó una encuesta que fue contestada por personas involucradas en el campo del mantenimiento, a la cual se le realizó un análisis cualitativo con el fin de concretar las secciones a incluir en la aplicación y las funcionalidades ofrecidas al usuario.
 
     \subsection{Análisis cualitativo}
 
         Se optó por un enfoque cualitativo para llevar a cabo una investigación que resultara en la obtención de características y funcionalidades a incluir en un aplicativo que asista en la gestión de  información y desarrollo de actividades de mantenimiento. Este enfoque se caracteriza por su flexibilidad y la exploración de percepciones, acciones y sentimientos de participantes mediante entrevistas, análisis de contenido, observaciones o grupos focales \parencite{BARROGA:2023}.
 
-        En el análisis cualitativo, la codificación se refiere al proceso mediante el cual el investigador organiza progresivamente los datos en pequeños grupos o conjuntos con sentido, facilitando la comprensión de los fenómenos estudiados. Este procedimiento consiste en asignar etiquetas breves, ya sean palabras o frases concisas, a segmentos largos de texto, permitiendo representar y describir los procesos observados. Para ello, se debe construir una categorización de los códigos, la cual, según \textcite{RODRIGUEZ:2005}, puede estructurarse a partir de uno de los siguientes enfoques metodológicos:
-
     \subsection{Identificación de patrones}
 
-        Para el análisis de datos cualitativos, se desarrolló una encuesta (Apéndice \ref{apc:qualitative_analysis_interview}) orientada a recopilar datos y conceptos aportados por los encuestados, con el fin de identificar características a incluir en el aplicativo móvil de realidad aumentada y gestión de la información para el mantenimiento preventivo. La información obtenida fue sometida a un proceso sistemático de codificación, categorización y síntesis, que permitió no solo identificar patrones recurrentes, sino también revelar particularidades y variaciones relevantes para el desarrollo del aplicativo.
+        Para el análisis de datos cualitativos se desarrolló una encuesta (Apéndice \ref{apc:qualitative_analysis_interview}) orientada a recopilar datos y conceptos aportados por personas con experiencia en el mantenimiento industrial, con el fin de identificar características a incluir en el aplicativo móvil de realidad aumentada y gestión de la información para el mantenimiento preventivo. La información obtenida fue sometida a un proceso sistemático de codificación, categorización y síntesis, que permitió no solo identificar patrones recurrentes sino también revelar particularidades relevantes para el desarrollo del aplicativo.
 
-        Las entrevistas derivadas de esta encuesta fueron registradas, guardadas y anonimizadas para su respectivo análisis. En ellas, se buscaba que los encuestados respondieran a partir de su experiencia en el área de mantenimiento, su familiaridad con las tecnologías de la información y la comunicación (TIC) y la realidad aumentada, así como su conocimiento sobre deficiencias organizacionales y conceptos asociados al mantenimiento preventivo.
+        Las entrevistas derivadas de la encuesta fueron registradas, guardadas y anonimizadas para su respectivo análisis. En ellas, se buscaba que los encuestados respondieran a partir de su experiencia en el área de mantenimiento, su familiaridad con las tecnologías de la información y la comunicación (TIC) y la realidad aumentada, así como su conocimiento sobre deficiencias organizacionales y conceptos asociados al mantenimiento preventivo.
 
     \subsection{Categorización y codificación}
 
-        \textcite{RODRIGUEZ:2005} mencionan que este proceso se puede realizar mediante un enfoque deductivo, en base a categorías previamente establecidas a la lectura del material; un enfoque inductivo, donde las categorías están establecidas a partir de la lectura; o aplicando ambas. Para el desarrollo del análisis se consideró la generación de las categorías después de realizar la lectura de la transcripción de las encuestas.
+        Se generó un conjunto de categorías a las cuales se les relacionarían posteriormente frases o citas de la transcripción de las encuestas buscando con esto clasificar y organizar la información para facilitar la identificación de patrones y vínculos conceptuales. \textcite{RODRIGUEZ:2005} mencionan que este proceso de categorización se puede realizar mediante un enfoque deductivo, en base a categorías establecidas previamente a la lectura del material; un enfoque inductivo, donde las categorías están establecidas a partir de la lectura y exámen del material; o aplicando ambos (enfoque mixto). Para el desarrollo del análisis se consideró la generación de las categorías después de realizar la lectura del texto.
 
-        Para lograr enlazar o relacionar lo expresado en las entrevistas se enumeraron categorías, sub-categorías y palabras clave, las cuales identifican una determinada frase de interés dentro del cuerpo de texto de las transcripciones, y así poder ligar diferentes citas de los entrevistados a un tema específico, encontrando similitudes o repeticiones en algunos términos. Las categorías generadas fueron las siguientes:
+        Para lograr enlazar o relacionar lo expresado en las entrevistas se enumeraron categorías, subcategorías y palabras clave, las cuales identifican una determinada frase de interés dentro del cuerpo de texto de las transcripciones, para así poder conectar las diferentes citas de los entrevistados a un tema específico, encontrando similitudes o repeticiones en algunos términos. Las categorías generadas fueron las siguientes:
 
         \begin{itemize}
 
-            \item \textbf{Perfil del encuestado:} donde se clasificó la información en base a la experiencia de los encuestados en el mantenimiento, los conocimientos asociados a dicha experiencia y la cercanía que tienen con el uso de tecnologías en este mismo contexto.
+            \item \textbf{Perfil del encuestado:} Reúne información relacionada con la experiencia en el área del mantenimiento de los encuestados, los conocimientos desarrollados a partir de esa experiencia y la familiaridad que tienen con herramientas tecnológicas en dicho contexto.
 
-            \item \textbf{Mantenimiento preventivo:} donde se clasificó aquella información relacionada con aspectos y conocimientos de mantenimiento.
+            \item \textbf{Mantenimiento preventivo:} Comprende conceptos y conocimientos asociados al mantenimiento preventivo mencionados por los entrevistados y respaldados por la literatura consultada.
 
-            \item \textbf{Defectos organizacionales:} donde se describen principalmente problemáticas que pueden presentarse en un contexto de mantenimiento de equipos, cuyo impacto negativo puede ser disminuido con la inclusión de nuevas tecnologías como la que se propone en el presente proyecto.
+            \item \textbf{Defectos organizacionales:} En esta categoría se incluyen las problemáticas asociadas al mantenimiento de equipos que los entrevistados señalaron, destacando aquellas en las que la incorporación de nuevas tecnologías, como la realidad aumentada, podría representar una mejora.
 
-            \item \textbf{Aplicativo de realidad aumentada:} donde se clasificó información asociada con características y funcionalidades de un aplicativo de realidad aumentada para mantenimiento preventivo, así como los desafíos de su implementación.
+            \item \textbf{Aplicativo de realidad aumentada:} En esta categoría se hace referencia a la información asociada con los paneles y funcionalidades de un aplicativo de realidad aumentada para mantenimiento preventivo, así como los desafíos para su implementación.
 
         \end{itemize}
 
@@ -36,80 +34,166 @@
 
     \subsection{Uso de software de análisis cualitativo}
 
-        Con los documentos de las transcripciones cargados en el área de trabajo de ATLAS.ti, se llevó a cabo una lectura con el objetivo de seleccionar citas de interés y asignar los códigos que tenían relación con las mismas. Se resalta que una cita puede hablar de diferentes palabras clave, lo cual resulta en que estará ligada a distintos códigos; con lo anterior se generan relaciones tanto de densidad, co-ocurrencia y semántica entre los códigos pudiendo identificar con estas la relevancia que las personas encuestadas daban a un término en específico.
+        Para llevar a cabo la codificación de las citas se empleó el software de análisis cualitativo ATLAS.ti. Inicialmente, se realizó una lectura exploratoria de las respuestas con el propósito de identificar segmentos de texto relevantes y asignarles códigos, tanto predefinidos en función de los objetivos del estudio como incorporados durante el proceso de análisis cuando fue necesario.
 
-        %%%%%%%%%% MOVER AQUI LOS SANKEY
+        En el análisis cualitativo es común que una misma cita sea asociada con múltiples códigos, ya que un mismo fragmento puede abordar diferentes conceptos de interés. Esta asignación simultánea da lugar a la coocurrencia de códigos, cuya exploración permite identificar patrones de asociación entre las categorías definidas durante el proceso de codificación.
+
+        A partir de esta información, se generaron recursos gráficos, como gráficos de coocurrencia y redes de relaciones entre códigos, que facilitaron la interpretación de los vínculos existentes entre las categorías analizadas. Estos recursos contribuyen a identificar tendencias y asociaciones presentes en las respuestas de los participantes, apoyando la interpretación de los resultados obtenidos.
 
     \subsection{Creación de redes semánticas}
 
-        Siguiendo la línea del análisis cualitativo y con el objetivo de identificar relaciones entre los conceptos e ideas emergentes durante la categorización y codificación, se recurre al uso de redes semánticas, también conocidas como redes conceptuales. Estas estructuras presentan un patrón característico que les permite vincular diversos nodos y representar cómo se interrelacionan dos palabras o conceptos \parencite{PEREZ:2022}.  %%%% revisar "y" griega y tal vez num. pag.
+        A partir de los códigos obtenidos durante el análisis cualitativo, se generaron redes semánticas para cada uno de los paneles identificados en las encuestas. Estas estructuras presentan un patrón característico que permite vincular diversos nodos y representar cómo se interrelacionan varios conceptos \parencite{PEREZ:2022}.
 
-        Se generaron redes semánticas para cada uno de los paneles identificados en las encuestas, con el fin de explorar qué funcionalidades deberían incluirse y qué aspectos del mantenimiento se relacionan con cada uno. Estas redes permiten visualizar posibles enfoques para el diseño del aplicativo de realidad aumentada, brindando un conjunto de opciones que orientan la toma de decisiones en función de cuáles se alinean mejor con los objetivos del sistema. El software utilizado ofrece siete tipos de relaciones conceptuales por defecto (Figura \ref{fig:relations_default}), aunque se propusieron nuevos conectores personalizados (Figura \ref{fig:relations_proposed}) para representar con mayor precisión las relaciones entre códigos.
-
+        El software utilizado ofrece siete tipos de relaciones conceptuales por defecto (Figura \ref{fig:relations_default}), para facilitar la visualización de las relaciones entre diversos códigos.
+        
         \input{assets/figures/first_phase/relation/fig_relations_default.tex}
 
+        Sin embargo, se propusieron conectores personalizados (Figura \ref{fig:relations_proposed}) para representar con mayor precisión las relaciones entre los códigos, las funcionalidades propuestas y los aspectos del mantenimiento preventivo asociados a cada panel, con el fin de explorar qué su integración en el aplicativo de realidad aumentada.
+        
         \input{assets/figures/first_phase/relation/fig_relations_proposed.tex}
 
-        \subsubsection{Redes semánticas de los paneles}
+        \subsubsection{Red de situaciones problemáticas}
 
-            Las redes desarrolladas, correspondientes a los paneles identificados durante la codificación, se conectan principalmente con funcionalidades del aplicativo. A su vez, estas funcionalidades se relacionan con aspectos y conceptos del mantenimiento, ya que su implementación busca mejorar directamente dichos elementos.
-            
-            \paragraph{Panel de cronograma de eventos} mostrado en la Figura \ref{fig:semantic_network_schedule}, tiene implicaciones en la gestión de la información relacionada con el tiempo, siendo la planificación una propiedad asociada al mismo. Este panel permite la programación y notificación de fechas, donde la gestión de los tiempos de intervención se asocian directamente con el concepto de vida útil.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_schedule.tex}
-
-            \paragraph{Panel de recursos multimedia} mostrado en la Figura \ref{fig:semantic_network_media_resources}, se enfoca en la gestión de manuales, fichas técnicas y otros documentos relacionados con los equipos y procesos de mantenimiento. Este panel permite al usuario acceder e interactuar con dicha información desde el aplicativo, facilitando también la capacitación y familiarización con los equipos.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_media_resources.tex}
-
-            \paragraph{Panel de inventario} mostrado en la Figura \ref{fig:semantic_network_inventory}, permite consultar la información de existencias para evitar errores en el conteo de disponibilidad antes y después de las intervenciones. Además, facilita el acceso a las características y especificaciones técnicas de los elementos registrados en el inventario.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_inventory.tex}
-
-            \paragraph{Panel de realización de procedimientos} mostrado en la Figura \ref{fig:semantic_network_procedures_development}, destaca la interacción con objetos 3D durante la ejecución de tareas. Esta característica propia de la realidad aumentada funciona como guía visual para el usuario encargado del mantenimiento, facilitando el aprendizaje y la correcta ejecución de los procedimientos.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_procedures_development.tex}
-
-            \paragraph{Panel de lista de procedimientos} mostrado en la Figura \ref{fig:semantic_network_procedures_list}, presenta los procedimientos organizados como una secuencia estructurada. Esta forma de visualización permite al usuario seguir paso a paso las instrucciones necesarias, apoyando la comprensión y cumplimiento adecuado de cada tarea.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_procedures_list.tex}
-
-            \paragraph{Panel de información técnica} mostrado en la Figura \ref{fig:semantic_network_technical_information}, agrupa funcionalidades relacionadas con la interacción con recursos multimedia y la gestión de información técnica y de seguimiento. Se destacó además la necesidad de disponibilidad fuera de red, especialmente para acceder a documentación y recursos sin conexión a internet.
-
-            \input{assets/figures/first_phase/network/fig_semantic_network_technical_information.tex}
-
-            \paragraph{Situaciones problemáticas en el mantenimiento} presenta una red semántica a partir de las situaciones problemáticas reportadas por los entrevistados. Estas situaciones, basadas en su experiencia en tareas de mantenimiento en distintas instituciones, se relacionan principalmente con algunos aspectos de mantenimiento, identificados tanto como causas o como consecuencias.
+            En la Figura \ref{fig:semantic_network_problematic_situations} Se muestra una red semántica generada a partir de la codificación de las citas, la cual refleja diversas situaciones problemáticas señaladas por los entrevistados, las cuales se identifican como causas o consecuencias de la ausencia de un determinado aspecto del mantenimiento. Esta representación evidencia la relevancia de dichos aspectos dentro de una organización, destacando cómo su omisión puede generar dificultades y afectaciones en los procesos de gestión y operación.
 
             \input{assets/figures/first_phase/network/fig_semantic_network_problematic_situations.tex}
 
-    \subsection{Co-ocurrencia de datos}
+        \subsubsection{Redes semánticas de los paneles}
 
-        Uno de los elementos o aspectos a visualizar fue la  co-ocurrencia, "la cual se refiere a los casos en que dos o más códigos aparecen juntos en el mismo contexto de datos (…). La co-ocurrencia puede revelar temas o patrones en los datos, ayudando a los investigadores a comprender las complejas relaciones entre los distintos elementos de su estudio" \parencite{STEWART:SF}.
+            En base a la codificación de las encuestas, se elaboraron diagramas de redes semánticas que exponen la relación entre los paneles y las funcionalidades del aplicativo. Dichas redes, además, evidencian las conexiones entre las funcionalidades y la codificación de los distintos aspectos y conceptos de mantenimiento identificados en la red, especificando el tipo su tipo de relación para cada caso.
+            
+            \paragraph{Panel de cronograma de eventos}
+            
+                La red semántica mostrada en la Figura \ref{fig:semantic_network_schedule}, muestra un panel que tiene su implicación en la gestión y control de los tiempos de mantenimiento, siendo la planificación una propiedad del mismo. Los encuestados destacaron aspectos como la programación de fechas, así como notificación de las mismas. En cuanto a los conceptos de mantenimiento preventivo, la gestión de las intervenciones se asoció directamente con el concepto de la vida útil de los equipos.
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_schedule.tex}
+
+            \paragraph{Panel de recursos multimedia}
+            
+                En la Figura \ref{fig:semantic_network_media_resources}, se presenta la red semántica para un panel que cubre el aspecto de gestión de información en cuanto a manuales, fichas técnicas y demás documentos asociados a los equipos y procesos de mantenimiento. Lo anterior es descrito como una ayuda para la capacitación del personal que realizará las diversas tareas de mantenimiento, al permitir al usuario, el acceso a información que favorece a la familiarización con los equipos así como a una mejora en la realización de los procedimientos.
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_media_resources.tex}
+
+            \paragraph{Panel de inventario}
+            
+                La red semántica presentada en la Figura \ref{fig:semantic_network_inventory} corresponde al Panel de Inventario, cuyo propósito principal es incorporar al aplicativo funcionalidades para la gestión de existencias de insumos antes y después de las intervenciones de mantenimiento, con el fin de facilitar el control de su disponibilidad y reducir posibles errores en su registro o conteo. De igual modo, se plantea la posibilidad de acceder a las características y especificaciones técnicas de los elementos registrados, permitiendo complementar la información necesaria para la planificación y ejecución de las actividades de mantenimiento. 
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_inventory.tex}
+
+            \paragraph{Panel de realización de procedimientos}
+            
+                La red semántica de la Figura \ref{fig:semantic_network_procedures_development} evidencia relaciones entre diferentes elementos asociados al apoyo visual, acceso a información y asistencia durante la ejecución de tareas de mantenimiento preventivo. Entre las conexiones más destacadas se encuentran la interacción con objetos 3D, la presentación secuencial de procedimientos y la validación de tareas mediante listas de chequeo, características relacionadas con la comprensión de actividades y la reducción de errores durante la ejecución.
+
+                Asimismo, conceptos como el acceso a información técnica y de seguimiento se vinculan con aspectos como la seguridad de ejecución, la eficiencia, el control de actividades y la calidad de los procesos. En conjunto, las relaciones identificadas sugieren que las herramientas basadas en realidad aumentada pueden funcionar no solo como apoyo visual, sino también como soporte integral para la gestión y ejecución del mantenimiento preventivo.
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_procedures_development.tex}
+
+            \paragraph{Panel de lista de procedimientos}
+            
+                Para este panel se obtuvo una red semántica que conecta cinco funcionalidades con aspectos de mantenimiento, tal y como se observa en la Figura \ref{fig:semantic_network_procedures_list}. Se destaca la presentación de una lista de instrucciones que organiza los procedimientos en una secuencia estructurada, lo cual coincide con el establecimiento de la estandarización para realizar las rutinas de mantenimiento de mayor calidad, que a su vez derive en  una disminución de los errores de ejecución. 
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_procedures_list.tex}
+
+            \paragraph{Panel de información técnica}
+            
+                El panel representado en esta red semántica (Figura N) integra cinco funcionalidades, entre las cuales destaca el acceso y la gestión de distintos tipos de información bajo condiciones de conectividad limitada, ofreciendo una solución a una necesidad práctica identificada en los contextos de trabajo descritos por los entrevistados. Asimismo, se resalta la posibilidad de interactuar con diversos recursos multimedia dentro del aplicativo, los cuales facilitan la gestión de la información y se vinculan con los conceptos de seguimiento y tiempo, elementos esenciales para cualquier tipo de intervención.
+
+                \input{assets/figures/first_phase/network/fig_semantic_network_technical_information.tex}
+
+    \subsection{Co-ocurrencia de datos}
+        
+        Uno de los elementos analizados, como complemento de las conexiones conceptuales representadas en las redes semánticas, fue la coocurrencia. Este concepto hace referencia a la aparición simultánea de dos o más códigos dentro de una porción de texto predefinida \parencite{ESCALANTE:2009}. A través de este análisis se buscó destacar la aparición de determinados códigos con mayor presencia, así como las relaciones establecidas entre ellos, resaltando aquellas coocurrencias que se presentaron con mayor frecuencia en las citas obtenidas de las encuestas. 
 
         \subsubsection{Diagramas Sankey}
 
-            La aparición de relaciones entre códigos intuyen una conexión donde se optó el uso de diagramas Sankey, los cuales permiten visualizar la proporción de un código o concepto en relación con otros.
-
-            \paragraph{Diagrama de densidad de las funcionalidades}representado en la Figura \ref{fig:sankey_functionalities}, muestra la relevancia que los encuestados dieron a cuales podrían ser las prestaciones incluidas dentro de los distintos paneles o secciones gráficas del aplicativo, donde se destacaron el acceso y gestión de la información técnica, además de poder interactuar con objetos 3D con procedimientos secuenciales, acercándose a la propuesta de hacer uso de la realidad aumentada para las intervenciones de mantenimiento.
-
-            \input{assets/figures/first_phase/sankey/fig_sankey_functionalities.tex}
-
-            \paragraph{Diagrama de densidad de experiencia en mantenimiento} representado en la Figura \ref{fig:sankey_maintenance_experience} muestra la proporción en la experiencia que han tenido los encuestados donde se observa que la mayor densidad está hacia la parte de ejecución de mantenimiento.
-
-            \input{assets/figures/first_phase/sankey/fig_sankey_maintenance_experience.tex}
-
-            \paragraph{Diagrama de densidad de los paneles} representado en la Figura \ref{fig:sankey_panels} identifica las propuestas de las secciones gráficas que pueden ser incluidas en el aplicativo, donde se observa una alta mención al panel de información técnica prevaleciendo la importancia de los aspectos de gestión de información técnica específica de los ítems mantenibles y del mismo modo se observa una gran densidad al panel de realización de procedimientos y el de lista de procedimientos, siendo estos una guía en el desarrollo de las distintas intervenciones de mantenimiento con el uso de realidad aumentada.
-
-            \input{assets/figures/first_phase/sankey/fig_sankey_panels.tex}
+            Para visualizar las relaciones más relevantes en cuanto a su coocurrencia, es decir en base a su densidad, se optó por el uso de diagramas Sankey. Estos diagramas ilustran por medio de caminos las relaciones entre entidades, permitiendo visualizar la proporción de un código o concepto en relación con otros \parencite{HECKER:SF}. A continuación se presentan los diagramas Sankey obtenidos:
             
-            \paragraph{Diagrama de co-ocurrencia entre funcionalidades y aspectos de mantenimiento} representado en la Figura \ref{fig:sankey_coocurrence_functionalities_aspecs}, se  observar un patrón de divergencia en el que ciertas funcionalidades (representadas de color naranja) se conectan con múltiples aspectos de mantenimiento (representados de color azul), el cual puede indicar un carácter multifacetico dentro del aplicativo de realidad aumentada. A su vez se observa un patron de convergencia donde multiples funcionalidades se relacionan con un mismo aspecto de mantenimiento las cuales podrían indicar criterios clave de diseño o experiencia de usuario, ya que son considerados desde distintas funcionalidades.
+            \paragraph{Diagrama de densidad de las funcionalidades}
             
-            \input{assets/figures/first_phase/sankey/fig_sankey_coocurrence_functionalities_aspecs.tex}
+                Las funcionalidades son aquellas prestaciones que se le dan al usuario y que van incluidas dentro de los distintos paneles o secciones gráficas del aplicativo. En la figura \ref{fig:sankey_functionalities} se muestran las funcionalidades identificadas en el proceso de categorización y la relevancia que los encuestados les dieron, basada en la cantidad de menciones. Las más destacadas fueron el acceso y gestión de la información técnica, acceso y gestión de información de seguimiento, interacción con objetos 3D y presentación de procedimientos como una secuencia. 
 
-            \paragraph{Diagrama de co-ocurrencia entre funcionalidades y conceptos de mantenimiento} representado en la Figura \ref{fig:sankey_coocurrence_functionalities_concepts} se observan del mismo modo patrones de divergencia donde ciertas funcionalidades (representadas de color naranja) se conectan con multiples conceptos clave de mantenimiento (representados de color celeste) indicando una conexión teórica, la cual ayuda a identificar cuales funcionalidades pueden ser mejor acopladas a características propias de un sistema de realidad aumentada.
+                \input{assets/figures/first_phase/sankey/fig_sankey_functionalities.tex}
 
-            \input{assets/figures/first_phase/sankey/fig_sankey_coocurrence_functionalities_concepts.tex}
+            \paragraph{Diagrama de densidad de los paneles}
+            
+                En el diagrama de la Figura \ref{fig:sankey_panels} se identifican las propuestas de las secciones gráficas que pueden ser incorporadas en el aplicativo identificadas en las citas, donde se observa una alta mención al panel de información técnica prevaleciendo la importancia de los aspectos de gestión de información técnica específica de los ítems mantenibles y del mismo modo se observa una gran densidad al panel de realización de procedimientos y el de lista de procedimientos, siendo estos una guía en el desarrollo de las distintas intervenciones de mantenimiento con el uso de realidad aumentada.
 
-            \paragraph{Diagrama de co-ocurrencia entre paneles y funcionalidades} representado en la Figura \ref{fig:sankey_coocurrence_panels_functionalities} muestra una divergencia entre ciertos paneles (representados de color verde) conectados a multiples funcionalidades (representados de color naranja), indicando una sección del aplicativo sea de carácter central o multifuncional, donde se puede guiar al usuario a través de la presencia o accesibilidad a ciertas funciones, permitiendo la identificación funcionalidades principales y facilitando la organización y desarrollo de la aplicación de realidad aumentada. 
+                \input{assets/figures/first_phase/sankey/fig_sankey_panels.tex}
+            
+            \paragraph{Diagrama de co-ocurrencia entre aspectos y funcionalidades de mantenimiento}
+            
+                Este diagrama, ilustrado en la Figura \ref{fig:sankey_coocurrence_functionalities_aspecs}, muestra la relación entre las funcionalidades (representadas en naranja) y los distintos aspectos del mantenimiento (en azul). Donde se observa un patrón de convergencia que reune múltiples aspectos de mantenimiento en una misma funcionalidad, lo cual podría indicar que dicha funcionalidad es un elemento central para el diseño y la experiencia de los usuarios, al ser considerado desde diferentes puntos.
+            
+                \input{assets/figures/first_phase/sankey/fig_sankey_coocurrence_functionalities_aspecs.tex}
 
-            \input{assets/figures/first_phase/sankey/fig_sankey_coocurrence_panels_functionalities.tex}
+            \paragraph{Diagrama de co-ocurrencia entre paneles y funcionalidades}
+            
+                El diagrama de Sankey de la Figura \ref{fig:sankey_coocurrence_panels_functionalities} muestra las conexiones entre los paneles propuestos en las encuestas (representados en verde) y las funcionalidades (en naranja). En dicho diagrama, se observa un patrón de divergencia en el que los paneles de mayor densidad se vinculan con múltiples funcionalidades, lo cual podría indicar que estas son secciones relevantes para ser incorporadas en el desarrollo de la aplicación de realidad aumentada.
+
+                \input{assets/figures/first_phase/sankey/fig_sankey_coocurrence_panels_functionalities.tex}
+
+    \subsection{Requerimientos de la aplicación}
+
+        A partir del análisis cualitativo de las encuestas, y como conclusión de la primera fase de desarrollo, se establecieron los paneles que conformarán la interfaz de la aplicación de realidad aumentada.
+
+        \subsubsection{Panel para la gestión de la información técnica de los equipos}
+
+            Este panel permite almacenar y gestionar la información técnica correspondiente a los equipos o ítems sujetos a mantenimiento. Con el propósito de facilitar la identificación precisa de cada equipo dentro de la aplicación, y de acuerdo con los fundamentos teóricos establecidos, se registrarán los siguientes datos:
+
+            \begin{itemize}
+                \item Código del equipo.
+                \item Nombre.
+                \item Tipo de máquina.
+                \item Ubicación.
+                \item Marca.
+                \item Modelo.
+                \item Número de serie.
+                \item Año de fabricación.
+                \item Precio inicial.
+                \item Fecha de adquisición.
+                \item Observaciones generales.
+                \item Datos del motor.
+                \item Imagen identificativa.
+            \end{itemize}
+
+        \subsubsection{Panel para la ejecución de procedimientos}
+
+            Esta sección opera como una guía para la realización asistida de las diversas actividades de mantenimiento mediante el uso de realidad aumentada. Su diseño se fundamenta en el análisis de coocurrencia derivado de las encuestas, a partir del cual se definieron las siguientes funcionalidades principales:
+
+            \begin{itemize}
+                \item Gestión de archivos multimedia, tales como imágenes y modelos 3D.
+                \item Interacción con recursos multimedia dentro de un entorno de realidad aumentada.
+                \item Presentación de procedimientos en un formato secuencial, estructurado por pasos y operaciones.
+            \end{itemize}
+
+        \subsubsection{Panel de escáner de códigos QR}
+
+            Este panel proporciona al usuario una interfaz basada en la cámara del dispositivo móvil, habilitada para la detección de marcadores y la posterior redirección en el sistema. Su objetivo es permitir el escaneo de los códigos QR para agilizar el acceso a los detalles y a las actividades de mantenimiento en realidad aumentada de cada máquina. Dada su importancia en el flujo de interacción, se ha establecido como la pantalla principal de la aplicación.
+
+        \subsubsection{Panel de cronograma de eventos}
+
+            En este panel, el usuario tiene la capacidad de registrar anotaciones relacionadas con las fechas de las intervenciones de mantenimiento, lo que facilita el control y cumplimiento de su periodicidad. Adicionalmente, se integra un sistema de notificaciones para alertar sobre la proximidad de las tareas programadas, propiciando su ejecución puntual y contribuyendo a una mejor organización del tiempo. Con base en la revisión teórica, los datos principales a registrar y presentar son:
+
+            \begin{itemize}
+                \item Nombre del evento de mantenimiento.
+                \item Descripción de la actividad.
+                \item Categoría del mantenimiento.
+                \item Fechas de intervención.
+                \item Intervalos o recurrencia de la actividad.
+            \end{itemize}
+
+    \subsection{Restricciones de la aplicación}
+
+        Con base en el alcance de los objetivos y los resultados de las encuestas, se establecieron las siguientes limitaciones técnicas para el desarrollo de la aplicación de realidad aumentada:
+
+        \begin{enumerate}
+
+            \item \textbf{Independencia de red:} La arquitectura del sistema opera bajo un enfoque fuera de línea (offline), por lo que las funcionalidades están restringidas a la ejecución local en el dispositivo para garantizar su operación en entornos de baja o nula conectividad a internet.
+            
+            \item \textbf{Reconocimiento espacial:} El despliegue de los elementos de realidad aumentada depende exclusivamente del seguimiento de marcadores físicos (rastreo de imágenes), prescindiendo de la integración y entrenamiento de modelos de aprendizaje automático.
+            
+            \item \textbf{Compatibilidad tridimensional:} El motor de renderizado restringe la importación y visualización de modelos 3D de forma exclusiva al estándar glTF, limitándose estrictamente a su codificación o formato binario (.glb).
+            
+            \item \textbf{Soporte multimedia:} La carga y visualización de recursos en dos dimensiones admite únicamente formatos de imagen estática, excluyendo el procesamiento de medios continuos o audiovisuales.
+            
+        \end{enumerate}
