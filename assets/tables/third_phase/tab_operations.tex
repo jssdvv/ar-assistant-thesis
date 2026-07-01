@@ -1,0 +1,65 @@
+\begin{ThreePartTable}
+
+    \renewcommand\TPTminimum{\textwidth}
+
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+    \setlength\tabcolsep{3pt}
+
+    \begin{TableNotes}
+        \item \textbf{Nota.} En todas las operaciones, la posición inicial corresponde a la posición final de la operación anterior o, en ausencia de una operación previa, a la posición original del modelo tridimensional.
+    \end{TableNotes}
+
+    \begin{longtable}{@{}P{0.25\textwidth}P{0.18\textwidth}P{0.57\textwidth}@{}}
+
+        \caption{Operaciones disponibles para la creación de animaciones de mantenimiento}
+        \label{tab:operations} \\
+
+        \toprule
+        \textbf{Operación} &
+        \textbf{Grados de libertad} &
+        \textbf{Descripción} \\
+        \toprule
+        \endfirsthead
+
+        \multicolumn{3}{r}{\textit{(Continuación de la Tabla \ref{tab:operations})}} \\
+        \toprule
+        \textbf{Operación} &
+        \textbf{Grados de libertad} &
+        \textbf{Descripción} \\
+        \toprule
+        \endhead
+
+        \midrule[\heavyrulewidth]
+        \multicolumn{3}{r}{\textit{Continúa en la siguiente página}}\\
+        \endfoot
+
+        \bottomrule
+        \insertTableNotes\\
+        \endlastfoot
+
+        Punto a punto &
+        6 GDL &
+        Permite definir una posición y orientación finales para un submodelo tridimensional. \\
+
+        \midrule
+
+        Cilíndrica &
+        2 GDL &
+        Describe un desplazamiento a lo largo de una dirección determinada y una rotación final sobre ese mismo eje. \\
+
+        \midrule
+
+        Junta &
+        3 GDL &
+        Permite modificar únicamente la orientación del submodelo mediante tres grados de libertad rotacionales, manteniendo como referencia la posición final de la operación anterior. \\
+
+        \midrule
+
+        Tornillo &
+        2 GDL &
+        Representa un movimiento helicoidal definido por un eje de desplazamiento y un número de revoluciones alrededor de dicho eje. \\
+
+    \end{longtable}
+
+\end{ThreePartTable}

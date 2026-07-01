@@ -1,0 +1,68 @@
+\begin{ThreePartTable}
+
+    \renewcommand\TPTminimum{\textwidth}
+
+    \setlength\LTleft{0pt}
+    \setlength\LTright{0pt}
+    \setlength\tabcolsep{3pt}
+
+    \begin{TableNotes}
+        \item \textbf{Nota.} Especificaciones técnicas obtenidas de los metadatos de ejecución generados por la herramienta Macrobenchmark de Jetpack y de las fichas técnicas oficiales de cada fabricante.
+    \end{TableNotes}
+
+    \begin{longtable}{@{}P{0.28\textwidth}P{0.15\textwidth}P{0.18\textwidth}P{0.12\textwidth}P{0.18\textwidth}@{}}
+
+        \caption{Especificaciones técnicas de los dispositivos de prueba} \label{tab:devices_specs} \\
+
+        \toprule
+        \textbf{Modelo} &
+            \textbf{Marca} &
+                \textbf{Núcleos} &
+                    \textbf{RAM} &
+                        \textbf{Android} \\
+        \toprule
+        \endfirsthead
+
+        \multicolumn{5}{r}{\textit{(Continuación de la tabla~\ref{tab:dispositivos_prueba})}} \\
+        \toprule
+        \textbf{Modelo} &
+            \textbf{Marca} &
+                \textbf{Núcleos} &
+                    \textbf{RAM} &
+                        \textbf{Android} \\
+        \toprule
+        \endhead
+
+        \midrule[\heavyrulewidth]
+        \multicolumn{5}{r}{\textit{Continúa en la siguiente página}}\\
+        \endfoot
+
+        \bottomrule
+        \insertTableNotes\\
+        \endlastfoot
+
+        Moto G15 &
+            Motorola &
+                Octa-core 2.0 GHz &
+                    4 GB &
+                        15 \\
+
+        \midrule
+
+        Redmi Note 10 Pro &
+            Xiaomi &
+                Octa-core 2.3 GHz &
+                    8 GB &
+                        13 \\
+
+        \midrule
+
+        Reno14 F 5G &
+            OPPO &
+                Octa-core 2.2 GHz &
+                    12 GB &
+                        15 \\
+
+    \end{longtable}
+
+\end{ThreePartTable}
