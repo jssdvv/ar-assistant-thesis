@@ -23,13 +23,13 @@
 
         A partir del entorno tecnológico, se diseñó la arquitectura de software mediante el patrón de arquitectura MVVM (\textit{Model-View-ViewModel}), permitiendo separar la lógica de presentación, la interfaz de usuario y el acceso a datos mediante clases intermediarias encargadas de administrar el estado expuesto a la vista.
         
-        Y Adicionalmente, para la gestión de estados e interacción de interfaces construidas con Jetpack Compose, se implementó un flujo de arquitectura basado en el patrón MVI (\textit{Model-View-Intent}), utilizando estados inmutables y eventos de intención para representar de forma reactiva las acciones del usuario y los cambios de la interfaz dentro del aplicativo.
+        Adicionalmente, para la gestión de estados e interacción de interfaces construidas con Jetpack Compose, se implementó un flujo de arquitectura basado en el patrón MVI (\textit{Model-View-Intent}), utilizando estados inmutables y eventos de intención para representar de forma reactiva las acciones del usuario y los cambios de la interfaz dentro del aplicativo.
 
     \subsection{Diseño de la lógica de negocio y subsistemas}
 
         \subsubsection{Descomposición modular del sistema}
 
-        A partir de los requerimientos establecidos mediante las encuestas y los referentes bibliográficos, el aplicativo fue estructurado en subsistemas, también conocidos como paquetes, donde cada uno cuenta con una responsabilidad funcional bien definida:
+        A partir de los requerimientos establecidos mediante las encuestas y los referentes bibliográficos, el aplicativo fue estructurado en subsistemas, también conocidos como paquetes. Lo anterior se muestra en la Figura \ref{fig:subsystems}.
 
         \input{assets/figures/second_phase/fig_uml_subsystems.tex}
 
@@ -55,7 +55,7 @@
 
         \subsubsection{Flujo de navegación del aplicativo}
 
-            La organización de los destinos del aplicativo se basa en un sistema de enrutamiento encargado de gestionar el flujo de navegación entre las diferentes secciones, controlando el acceso y la presentación de pantallas y componentes. Este sistema se representa mediante un árbol de navegación que define la jerarquía entre los destinos del aplicativo.
+            La organización de los destinos del aplicativo se basa en un sistema de enrutamiento encargado de gestionar el flujo de navegación entre las diferentes secciones, controlando el acceso y la presentación de pantallas y componentes. Este sistema se representa mediante un árbol de navegación que define la jerarquía entre los destinos del aplicativo en la Figura \ref{fig:uml_navigation_state}.
 
             \input{assets/figures/second_phase/navigation/fig_uml_navigation_state.tex}
 
@@ -351,11 +351,11 @@
 
             \paragraph{La pantalla de especificaciones}
 
-                concentra la información técnica correspondiente a la máquina seleccionada, permitiendo consultar sus principales características de manera organizada.
+                concentra la información técnica correspondiente a la máquina seleccionada, permitiendo consultar sus principales características de manera organizada, incorporando una imagen principal del equipo cuando esta se encuentra disponible para facilitar su identificación.
 
                 \input{assets/figures/second_phase/secondary_screen/fig_screen_specs.tex}
 
-                Como se observa en la Figura \ref{fig:screen_specs}, la información se presenta mediante tarjetas temáticas, incorporando una imagen principal del equipo cuando esta se encuentra disponible para facilitar su identificación.
+                Como se observa en la Figura \ref{fig:screen_specs}, la información se presenta mediante tarjetas temáticas presentes en los Apéndices \ref{machine_cards} y \ref{motor_cards}.
 
             \paragraph{La pantalla de documentación}
 
@@ -399,6 +399,10 @@
 
                 Una vez detectado el marcador, se habilitan las herramientas de edición. El usuario puede insertar modelos tridimensionales y ajustar su posición y orientación respecto al marcador seleccionado, estableciendo la configuración espacial que será utilizada posteriormente durante la ejecución de la experiencia de realidad aumentada.
 
+                Los controles de reposicionamiento de modelos, ilustrados en la Figura \ref{fig:calibration_controls}, se encuentran en un panel inferior expandible que organiza cinco categorías de botones. La primera permite seleccionar el modo de transformación, ya sea posición u orientación; la segunda define la unidad de medida correspondiente al modo seleccionado; la tercera permite restaurar los valores predeterminados; la cuarta está compuesta por un conjunto de ruedas o deslizadores con una resolución máxima de una unidad de medida; y la quinta consiste en un botón para eliminar el modelo seleccionado. Al interactuar con los deslizadores, se activan los nodos de eje ilustrados en la Figura \ref{fig:node_axes}, los cuales proporcionan al usuario una guía visual sobre la dirección en la que puede desplazarse el modelo 3D.
+
+                \input{assets/figures/second_phase/controls/fig_calibration_controls.tex}
+
             \paragraph{Pantalla de editor de actividades de mantenimiento}
 
                 Una vez finalizada la calibración de los modelos, el usuario procede a definir las actividades de mantenimiento mediante la pantalla del editor de actividades. A diferencia de las interfaces de realidad aumentada, esta pantalla no incorpora una vista de cámara, ya que está orientada exclusivamente a la creación y edición de las animaciones que compondrán cada procedimiento de mantenimiento.
@@ -411,9 +415,13 @@
 
                 \input{assets/figures/second_phase/secondary_screen/fig_screen_editor_steps_list.tex}
 
-                Cada actividad se organiza en una serie de pasos, los cuales pueden contener una o varias operaciones encargadas de definir las animaciones de los submodelos seleccionados. Para ello, el editor incorpora cuatro tipos de operaciones: punto a punto, cilíndrica, junta y tornillo, cada una diseñada para representar diferentes comportamientos mecánicos.
+                Cada actividad se organiza en una serie de pasos, los cuales pueden contener una o varias operaciones encargadas de definir las animaciones de los submodelos seleccionados. Para ello el usuario deberá primero crear los pasos mediante el dialogo mostrado en la Figura \ref{fig:steps_dialog}, que habilitará la creación de operaciones que incorpora un panel inferior expandible, ilustrado en la Figura \ref{fig:operation_controls}, donde se seleccionará cuales submodelos serán animados de forma conjunta mediante su tipo de operacion: punto a punto, cilíndrica, junta y tornillo, cada una diseñada para representar diferentes comportamientos mecánicos.
 
-                La Tabla \ref{tab:operations} resume las características de cada una de estas operaciones, indicando los grados de libertad que implementan y una descripción general de su comportamiento durante la construcción de las animaciones.
+                \input{assets/figures/second_phase/controls/fig_steps_dialog.tex}
+
+                \input{assets/figures/second_phase/controls/fig_operation_controls.tex}
+
+                La Tabla \ref{tab:operations} resume las características de cada una de las operaciones, indicando los grados de libertad que implementan y una descripción general de su comportamiento durante la construcción de las animaciones.
 
                 \input{assets/tables/third_phase/tab_operations.tex}
 

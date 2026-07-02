@@ -71,13 +71,53 @@
         \subsubsection{Funcionamiento de las pantallas de información técnica}
 
             \paragraph{Pantalla de especificaciones}
+
+                En la Figura \ref{fig:func_specs} se muestra la capacidad de las tarjetas temáticas de la pantalla para editar su información mediante campos de texto, además de poder intercambiar la imagen de la propia máquina mediante el dialogo de edición.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_specs.tex}
+
             \paragraph{Pantalla de documentación}
+
+                En la Figura \ref{fig:func_docs} se presenta la capacidad de la pantalla de mostrar diversos documentos insertados por el usuario y consultar su contenido mediante el visor integrado de PDFs.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_docs.tex}
+
             \paragraph{Pantalla de actividades de mantenimiento}
+
+                En la Figura \ref{fig:func_activities} se muestra mediante el dialogo de actividades la capacidad de crear una nueva actividad de mantenimiento.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_activities.tex}
 
         \subsubsection{Funcionamiento de las pantallas de configuración previa de realidad aumentada}
 
             \paragraph{Pantalla de marcadores}
+
+                En la Figura \ref{fig:func_markers} se presenta el procedimiento para la creación de marcadores desde la interfaz correspondiente. Durante esta prueba se verifica que el aplicativo permita generar nuevos marcadores de manera consecutiva, asignando un código QR único a cada uno y evitando la duplicidad de identificadores.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_markers.tex}                
+
             \paragraph{Pantalla de calibración de modelos 3D}
+
+                Tanto el proceso de calibración como la sesión de realidad aumentada asistida comienzan con la detección de un marcador basado en un código QR. Como se observa en la Figura \ref{fig:func_detection}, el usuario debe seleccionar previamente uno de los marcadores registrados para que el aplicativo pueda reconocer la imagen real e iniciar la experiencia de realidad aumentada.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_detection.tex}
+
+                Una vez que el marcador ha sido detectado correctamente, se habilitan las funciones de calibración de modelos. A partir de ese momento, se seleccionó un modelo 3D y, mediante los controles de reposicionamiento, se ajusta su ubicación y orientación de acuerdo con la posición real de la máquina (ver Figura \ref{fig:func_calibration}).
+
+                \input{assets/figures/third_phase/functionalities/fig_func_calibration.tex}
+
             \paragraph{Pantalla de editor de actividades de mantenimiento}
 
+                La Figura \ref{fig:func_steps} presenta el procedimiento para crear un paso dentro de una actividad de mantenimiento. En la parte inferior de la pantalla de edición de actividades se oprime el botón con ícono de “pasos” que permite observar los pasos existentes y crear uno nuevo en la opción “añadir paso”. Al oprimir, se abre un cuadro de dialogo donde asignar una imagen, nombre y descripción del paso correspondiente, habilitando posteriormente la configuración de animaciones mediante la creación de una nueva operación.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_steps.tex}
+
+                Una vez creado el paso, el usuario puede definir las operaciones que describen el movimiento de los submodelos 3D. Como se muestra en la Figura \ref{fig:func_operations}, primero se selecciona las partes que participarán en la animación, junto a su tipo de operacion (ver Tabla \ref{tab:operations}), el cual habilita diferentes casillas de parámetros para configurar el movimiento que ejecutará cada entidad del modelo tridimensional.
+
+                \input{assets/figures/third_phase/functionalities/fig_func_operations.tex}
+
         \subsubsection{Funcionamiento de la pantalla final de sesión de realidad aumentada}
+
+            En procedimiento de la pantalla de sesión de realidad aumentada, Figura \ref{fig:func_arsession}, se selecciona el marcador asociado a la máquina y se escanea el código QR correspondiente para iniciar la experiencia. Cuando el marcador es detectado correctamente, se habilitan los controles para navegar entre los diferentes pasos del procedimiento, así como el botón de obturador, que permite reproducir, pausar y reanudar las animaciones previamente configuradas.
+
+            \input{assets/figures/third_phase/functionalities/fig_func_arsession.tex}
