@@ -1,6 +1,38 @@
 \section{Pruebas de la aplicación}
 
-    \subsection{Pruebas de Rendimiento}
+    \subsection{Equipo de pruebas}
+
+        El equipo seleccionado para las pruebas del aplicativo es un compresor de aire industrial marca FIAC, modelo AB 150-320, ubicado en el Laboratorio 109 de la escuela de Ingeniería Mecánica. Este laboratorio presenta condiciones de iluminación adecuadas para el correcto funcionamiento del aplicativo de realidad aumentada, factor indispensable para la detección fiable de marcadores mediante la cámara del dispositivo. El equipo fue utilizado como objeto de referencia para el modelado tridimensional, permitiendo verificar el correcto funcionamiento de las animaciones sobre modelos reales dentro del aplicativo.
+
+        \input{assets/tables/third_phase/tab_equipment_specs.tex}
+
+        \subsubsection{Descomposición de marcadores}
+
+            Los marcadores utilizados en el aplicativo fueron diseñados con base en 
+            códigos QR, generados y exportados directamente desde la propia 
+            aplicación. Cada marcador está asociado a una máquina y posición específica, permitiendo un número ilimitado de marcadores por 
+            máquina registrada.
+
+            Estructuralmente, cada marcador consiste en un rectángulo con un 
+            margen interno que organiza dos zonas: la parte superior contiene el 
+            código QR y la parte inferior su decodificación en texto, siguiendo 
+            la nomenclatura \textit{MxPy}, donde \textit{M} indica la máquina 
+            con su identificador numérico y \textit{P} indica la posición con 
+            su índice correspondiente, permitiendo distinguir múltiples marcadores 
+            asociados a una misma máquina (ver Figura \ref{fig:markers_decomposition}). Por ejemplo, \textit{M1P1} corresponde 
+            al primer marcador de la máquina con identificador 1 y su posición con índice 1.
+
+            \input{assets/figures/third_phase/fig_markers_decomposition.tex}
+
+        \subsubsection{Modelo 3D}
+
+            El modelo tridimensional fue construido completamente desde cero de forma manual. Se realizaron dos sesiones de medición sobre el equipo físico ubicado en el Laboratorio 109 de la escuela de Ingeniería Mecánica, empleando pie de rey digital, cinta métrica, flexómetro y goniómetro como instrumentos de medición directa. Adicionalmente, se consultaron los catálogos oficiales de los fabricantes, los cuáles aportaron especificaciones dimensionales de los cabezales y del motor eléctrico. Para el caso particular de las poleas, las mediciones se complementaron con la referencia de las correas de transmisión, dado que el perfil de las correas define directamente la geometría de la cavidad de las poleas.
+
+            Para el desarrollo del modelo tridimensional se empleó principalmente OnShape como software de modelado, debido a su capacidad de trabajo colaborativo en tiempo real (ver Figura \ref{fig:model_onshape}). Complementariamente, se utilizó SolidWorks a través de su herramienta ToolBox para la obtención de modelos normalizados de elementos de fijación, los cuáles fueron exportados e insertados en OnShape, incluyendo arandelas, pernos, tuercas, abrazaderas, cojinetes de fricción, anillos, bulones y rodamientos.
+
+            \input{assets/figures/third_phase/fig_model_onshape.tex}
+
+    \subsection{Pruebas de rendimiento}
 
         \subsubsection{Dispositivos de prueba}
 
@@ -102,7 +134,7 @@
 
                 \input{assets/figures/third_phase/functionalities/fig_func_detection.tex}
 
-                Una vez que el marcador ha sido detectado correctamente, se habilitan las funciones de calibración de modelos. A partir de ese momento, se seleccionó un modelo 3D y, mediante los controles de reposicionamiento, se ajusta su ubicación y orientación de acuerdo con la posición real de la máquina (ver Figura \ref{fig:func_calibration}).
+                Una vez que el marcador ha sido detectado correctamente, se habilitan las funciones de calibración de modelos. A partir de ese momento, se seleccionó un modelo 3D y, mediante los controles de reposicionamiento, se ajustó su ubicación y orientación de acuerdo con la posición real de la máquina (ver Figura \ref{fig:func_calibration}).
 
                 \input{assets/figures/third_phase/functionalities/fig_func_calibration.tex}
 
@@ -112,12 +144,12 @@
 
                 \input{assets/figures/third_phase/functionalities/fig_func_steps.tex}
 
-                Una vez creado el paso, el usuario puede definir las operaciones que describen el movimiento de los submodelos 3D. Como se muestra en la Figura \ref{fig:func_operations}, primero se selecciona las partes que participarán en la animación, junto a su tipo de operacion (ver Tabla \ref{tab:operations}), el cual habilita diferentes casillas de parámetros para configurar el movimiento que ejecutará cada entidad del modelo tridimensional.
+                Una vez creado el paso, el usuario puede definir las operaciones que describen el movimiento de los submodelos 3D. Como se muestra en la Figura \ref{fig:func_operations}, se selecciona las partes que participarán en la animación, junto a su tipo de operación (ver Tabla \ref{tab:operations}), el cual habilita diferentes casillas de parámetros para configurar el movimiento que ejecutará cada entidad del modelo tridimensional.
 
                 \input{assets/figures/third_phase/functionalities/fig_func_operations.tex}
 
         \subsubsection{Funcionamiento de la pantalla final de sesión de realidad aumentada}
 
-            En procedimiento de la pantalla de sesión de realidad aumentada, Figura \ref{fig:func_arsession}, se selecciona el marcador asociado a la máquina y se escanea el código QR correspondiente para iniciar la experiencia. Cuando el marcador es detectado correctamente, se habilitan los controles para navegar entre los diferentes pasos del procedimiento, así como el botón de obturador, que permite reproducir, pausar y reanudar las animaciones previamente configuradas.
+            En el procedimiento de la pantalla de sesión de realidad aumentada, Figura \ref{fig:func_arsession}, se selecciona el marcador asociado a la máquina y se escanea el código QR correspondiente para iniciar la experiencia. Cuando el marcador es detectado correctamente, se habilitan los controles para navegar entre los diferentes pasos del procedimiento, así como el botón de obturador, que permite reproducir, pausar y reanudar las animaciones previamente configuradas.
 
             \input{assets/figures/third_phase/functionalities/fig_func_arsession.tex}
