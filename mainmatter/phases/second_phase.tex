@@ -4,15 +4,15 @@
 
     \subsection{Especificación del entorno tecnológico}
 
-        El aplicativo fue desarrollado para la plataforma Android usando el entorno de desarrollo integrado (IDE), Android Studio, como solución oficial y optima para la codificación y testeo de esta tecnología de realidad aumentada.
+        El aplicativo fue desarrollado para la plataforma Android usando el entorno de desarrollo integrado (IDE), Android Studio, como solución oficial y óptima para la codificación y testeo de esta tecnología de realidad aumentada.
 
         \subsubsection{Lenguaje de programación y framework}
 
-            Se hizó uso del lenguaje oficial de la plataforma android, Kotlin, por sus implementación directa con el framework declarativo de Jetpack Compose y su gestión de estados mediante StateFlows y corrutinas para manejar adecuadamente de forma asíncrona la carga e interacción con los modelos 3D.
+            Se hizo uso del lenguaje oficial de la plataforma Android, Kotlin, por su implementación directa con el framework declarativo de Jetpack Compose y su gestión de estados mediante StateFlows y corrutinas para manejar adecuadamente de forma asíncrona la carga e interacción con los modelos 3D.
 
         \subsubsection{Motor y librerías de realidad aumentada}
 
-            Se implementa el motor de renderizado 3D Filament, gracias a su alta eficiencia en dispositivos android y diseño de menor tamaño, mediante la implementación de la libreria de SceneView, que adapta el antiguo SDK de SceneForm creado por Google para la gestión de una escena 3D de realidad aumentada.
+            Se implementa el motor de renderizado 3D Filament, gracias a su alta eficiencia en dispositivos Android y diseño de menor tamaño, mediante la implementación de la librería de SceneView, que adapta el antiguo SDK de SceneForm creado por Google para la gestión de una escena 3D de realidad aumentada.
 
 
         \subsubsection{Interfaz de usuario}
@@ -29,7 +29,7 @@
 
         \subsubsection{Descomposición modular del sistema}
 
-        A partir de los requerimientos establecidos mediante las encuestas y los referentes bibliográficos, el aplicativo fue estructurado en subsistemas, también conocidos como paquetes. Lo anterior se muestra en la Figura \ref{fig:subsystems}.
+        A partir de los requerimientos establecidos mediante las entrevistas y los referentes bibliográficos, el aplicativo fue estructurado en subsistemas, también conocidos como paquetes. Lo anterior se muestra en la Figura \ref{fig:subsystems}.
 
         \input{assets/figures/second_phase/fig_uml_subsystems.tex}
 
@@ -141,11 +141,11 @@
 
         La escena de realidad aumentada fue implementada mediante la librería SceneView para Android, la cual integra el motor de renderizado Filament junto con el kit de desarrollo ARCore de Google. Esta combinación permitió administrar el renderizado de modelos tridimensionales, el seguimiento espacial del dispositivo y el posicionamiento dinámico de contenido virtual durante las sesiones de realidad aumentada.
 
-        De acuerdo con \textcite{GOOGLE:2024}, ARCore proporciona tres capacidades principales utilizadas durante la implementación de la escena:
+        De acuerdo con \textcite{GOOGLE:2025}, ARCore proporciona tres capacidades principales utilizadas durante la implementación de la escena:
 
         \begin{enumerate}
 
-            \item \textbf{Seguimiento de movimiento:} permite identificar y rastrear puntos carácteristicos del entorno, estimando la posición y orientación del dispositivo en tiempo real, mediante visión computacional y sensores inerciales. 
+            \item \textbf{Seguimiento de movimiento:} permite identificar y rastrear puntos característicos del entorno, estimando la posición y orientación del dispositivo en tiempo real, mediante visión computacional y sensores inerciales. 
             
             \item \textbf{Comprensión del entorno:} permite la detección de superficies horizontales, verticales e inclinadas.
 
@@ -279,7 +279,7 @@
 
         \subsubsection{Sesión de realidad aumentada}
 
-            Una sesión de ARCore es una clase encargada de manejar el ciclo de vida y estado del sistema de realidad aumentada.
+            Una sesión de ARCore es la clase encargada de gestionar el ciclo de vida y el estado del sistema de realidad aumentada. Este proceso comprende desde la configuración e inicialización del entorno, hasta su ejecución activa, etapa en la cual se llevan a cabo las tareas de detección e interacción.
             
             \paragraph{Configuración inicial.}
             
@@ -289,11 +289,13 @@
                 
                 \item Enfoque automático: Activado para que la cámara mantenga la nitidez sin intervención del usuario.
 
-                \item Estimación de luz: Desactivada porque la aplicación utiliza principalmente materiales que no interactuan con la luz o tienen un sombrado estilo cartoon en donde la iluminación real tienen un impacto limitado y controlado.
+                \item Estimación de luz: Desactivada porque la aplicación utiliza principalmente materiales que no interactúan con la luz o tienen un sombreado estilo cartoon en donde la iluminación real tiene un impacto limitado y controlado.
 
-                \item Ubicación instantanea: Activada para permitir pruebas de impacto de rayos sobre superficies.
+                \item Ubicación instantánea: Desactivada con el fin de evitar estimaciones geométricas preliminares imprecisas y priorizar el procesamiento en los algoritmos principales de la aplicación.
 
                 \item Modo de profundidad: Habilitado si el dispositivo es compatible, para obtener un mapa de profundidad más preciso.
+                
+                \item Búsqueda de planos: Activada para brindar una mejor experiencia de usuario (UX). Permitiendo visualizar una nube de puntos, confirmando visualmente que ARCore está funcionando.
 
             \end{enumerate}
 
@@ -355,7 +357,7 @@
 
                 \input{assets/figures/second_phase/secondary_screen/fig_screen_specs.tex}
 
-                Como se observa en la Figura \ref{fig:screen_specs}, la información se presenta mediante tarjetas temáticas presentes en los Apéndices \ref{machine_cards} y \ref{motor_cards}.
+                Como se observa en la Figura \ref{fig:screen_specs}, la información se presenta mediante tarjetas temáticas presentes en los Apéndices \ref{apc:machine_cards} y \ref{apc:motor_cards}.
 
             \paragraph{La pantalla de documentación}
 
