@@ -252,9 +252,6 @@
                 \subparagraph{Nodo de renderizable.}
 
                     Representa una malla renderizable individual (submodelo) extraída de un nodo de modelo, correspondiente a un \textit{renderableNode} identificable dentro del archivo \textit{.glb}, al cual se le pueden asignar texturas y materiales de forma individual. Al iniciar la escena es reparentado desde el nodo de modelo a un nodo dedicado a la corrección espacial, permitiendo su manipulación, aplicación de materiales y animación de forma independiente. Sin embargo este preserva el vínculo desde su nodo padre mediante la propiedad de \textit{renderableNodes}.
-
-                    %agregar imagen TODO:
-
         \subsubsection{Nodos de jerarquía espacial}
 
             Los nodos de jerarquía espacial estructuran la organización de los modelos tridimensionales dentro de la escena mediante una cadena de parentesco: el nodo de origen agrupa los contenedores del modelo, cada contenedor corrige el centro espacial del modelo y agrupa sus pivotes, y cada pivote corrige el centro espacial de un renderizable individual. Esta jerarquía permite tanto el reposicionamiento en bloque de todos los modelos insertados en la escena de realidad aumentada mediante un marcador, como la manipulación independiente de cada renderizable (ver Figura \ref{fig:uml_node_hierarchy}).
@@ -268,8 +265,6 @@
                 Representa una cámara virtual desde la cual se observa la perspectiva de la escena de realidad aumentada. Su posición y rotación están ligadas al movimiento físico del dispositivo en el mundo real, controladas por ARCore, siendo la vista principal donde se renderiza la escena tridimensional (ver Figura \ref{fig:node_camera}).
 
                 \input{assets/figures/second_phase/node/fig_node_camera.tex}
-
-                % agregar imagen comparativa de la escena vista mediante el dispositivo a el mundo real TODO:
 
             \paragraph{Nodo de origen.}
 
@@ -313,7 +308,7 @@
 
         El diseño de la interfaz gráfica se desarrolló con el objetivo de proporcionar una experiencia de usuario consistente, intuitiva y adaptada a las necesidades identificadas durante la fase de requerimientos y restricciones. Para ello, se definió un sistema de diseño basado en componentes reutilizables y patrones de interacción uniformes, buscando mantener una apariencia homogénea en toda la aplicación, facilitar la navegación y simplificar la incorporación de nuevas funcionalidades.
 
-        La interfaz del aplicativo está conformada por un conjunto de pantallas organizadas según el flujo de navegación de la Figura \ref{fig:uml_navigation_state}. Asimismo, incorpora componentes reutilizables que mantienen la consistencia visual y funcional entre las diferentes secciones del sistema. En los siguientes apartados se describen los principales componentes de la interfaz y la organización de las pantallas que conforman el aplicativo.
+        La interfaz del aplicativo está conformada por un conjunto de pantallas organizadas según el flujo de navegación de la Figura \ref{fig:uml_navigation_state}. Asimismo, incorpora componentes reutilizables que mantienen la consistencia visual y funcional entre las diferentes secciones del sistema. El código fuente puede consultarse en el Apéndice \ref{apc:github}. En los siguientes apartados se describen los principales componentes de la interfaz y la organización de las pantallas que conforman el aplicativo.
 
         \subsubsection{Diseño de los componentes comunes}
 
