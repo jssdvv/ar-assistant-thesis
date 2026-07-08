@@ -1,0 +1,31 @@
+\newlength{\markerwidth}
+\setlength{\markerwidth}{\dimexpr(\textwidth - 4\arrayrulewidth) * 4 / 15\relax}
+
+\begin{figure}[H]
+    \caption{Marcadores de la máquina}
+    \centering
+    \setlength{\tabcolsep}{0pt}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{
+        |>{\centering\arraybackslash}m{(\textwidth - 4\arrayrulewidth) / 3}
+        |>{\centering\arraybackslash}m{(\textwidth - 4\arrayrulewidth) / 3}
+        |>{\centering\arraybackslash}m{(\textwidth - 4\arrayrulewidth) / 3}|
+    }
+        \hline
+
+        \vspace{10pt}
+        \includegraphics[width=\markerwidth]{assets/figures/second_phase/M1P1.png} &
+            \vspace{10pt}
+            \includegraphics[width=\markerwidth]{assets/figures/second_phase/M1P2.png} &
+                \vspace{10pt}
+                \includegraphics[width=\markerwidth]{assets/figures/second_phase/M1P3.png} \\
+
+        \rule{0pt}{0.8cm}\small Índice de posición 1 &
+            \rule{0pt}{0.8cm}\small Índice de posición 2 &
+                \rule{0pt}{0.8cm}\small Índice de posición 3 \\
+
+        \hline
+    \end{tabular}
+    \label{fig:markers_decomposition}
+\end{figure}
+\fixvspace{0}
