@@ -6,29 +6,11 @@
 
         \input{assets/tables/third_phase/tab_equipment_specs.tex}
 
-        \subsubsection{Descomposición de marcadores}
-
-            Los marcadores utilizados en el aplicativo fueron diseñados con base en 
-            códigos QR, generados y exportados directamente desde la propia 
-            aplicación. Cada marcador está asociado a una máquina y posición específica, permitiendo un número ilimitado de marcadores por 
-            máquina registrada.
-
-            Estructuralmente, cada marcador consiste en un rectángulo con un 
-            margen interno que organiza dos zonas: la parte superior contiene el 
-            código QR y la parte inferior su decodificación en texto, siguiendo 
-            la nomenclatura \textit{MxPy}, donde \textit{M} indica la máquina 
-            con su identificador numérico y \textit{P} indica la posición con 
-            su índice correspondiente, permitiendo distinguir múltiples marcadores 
-            asociados a una misma máquina (ver Figura \ref{fig:markers_decomposition}). Por ejemplo, \textit{M1P1} corresponde 
-            al primer marcador de la máquina con identificador 1 y su posición con índice 1.
-
-            \input{assets/figures/third_phase/fig_markers_decomposition.tex}
-
         \subsubsection{Modelo 3D}
 
-            El modelo tridimensional fue construido completamente desde cero de forma manual. Se realizaron dos sesiones de medición sobre el equipo físico ubicado en el Laboratorio 109 de la escuela de Ingeniería Mecánica, empleando pie de rey digital, cinta métrica, flexómetro y goniómetro como instrumentos de medición directa. Adicionalmente, se consultaron los catálogos oficiales de los fabricantes, los cuáles aportaron especificaciones dimensionales de los cabezales y del motor eléctrico. Para el caso particular de las poleas, las mediciones se complementaron con la referencia de las correas de transmisión, dado que el perfil de las correas define directamente la geometría de la cavidad de las poleas.
+            El modelo tridimensional fue construido completamente desde cero de forma manual. Se realizaron dos sesiones de medición sobre el equipo físico ubicado en el Laboratorio 109 de la escuela de Ingeniería Mecánica, empleando pie de rey digital, cinta métrica, flexómetro y goniómetro como instrumentos de medición directa. Adicionalmente, se consultaron los catálogos oficiales de los fabricantes, los cuales aportaron especificaciones dimensionales de los cabezales y del motor eléctrico. Para el caso particular de las poleas, las mediciones se complementaron con la referencia de las correas de transmisión, dado que el perfil de las correas define directamente la geometría de la cavidad de las poleas.
 
-            Para el desarrollo del modelo tridimensional se empleó principalmente OnShape como software de modelado, debido a su capacidad de trabajo colaborativo en tiempo real (ver Figura \ref{fig:model_onshape}). Complementariamente, se utilizó SolidWorks a través de su herramienta ToolBox para la obtención de modelos normalizados de elementos de fijación, los cuáles fueron exportados e insertados en OnShape, incluyendo arandelas, pernos, tuercas, abrazaderas, cojinetes de fricción, anillos, bulones y rodamientos.
+            Para el desarrollo del modelo tridimensional se empleó principalmente OnShape como software de modelado, debido a su capacidad de trabajo colaborativo en tiempo real (ver Figura \ref{fig:model_onshape}). Complementariamente, se utilizó SolidWorks a través de su catálogo ToolBox para la obtención de modelos normalizados de elementos de fijación, los cuales fueron exportados e insertados en OnShape, incluyendo arandelas, pernos, tuercas, abrazaderas, cojinetes de fricción, anillos, bulones y rodamientos.
 
             \input{assets/figures/third_phase/fig_model_onshape.tex}
 
@@ -46,7 +28,7 @@
 
             El tiempo de inicio de una aplicación constituye uno de los principales indicadores de la experiencia de uso, ya que corresponde al tiempo que transcurre desde que el usuario solicita la apertura del aplicativo hasta que este se encuentra disponible para su utilización. Para evaluar este comportamiento, se realizaron pruebas en tres escenarios de arranque que representan diferentes estados del aplicativo dentro del sistema operativo Android.
 
-            Para cada uno de estos tres escenarios, se ejecutaron diez iteraciones por dispositivo utilizando la herramienta \textit{Macrobenchmark} de Jetpack, registrando el tiempo total de inicio en milisegundos (ms) mediante la métrica \textit{StartupTimingMetric}. A partir de las mediciones obtenidas se calcularon los valores de tiempo mínimo, máximo y promedio, mediante un gráfico de barras que contrasta el rendimiento de inicio entre los tres dispositivos evaluados.
+            Para cada uno de estos tres escenarios, se ejecutaron diez iteraciones por dispositivo utilizando la herramienta \textit{Macrobenchmark} de Jetpack, registrando el tiempo total de inicio en milisegundos (ms) mediante la métrica \textit{StartupTimingMetric}. A partir de las mediciones obtenidas se calcularon los valores de tiempo mínimo, máximo y promedio, mediante un gráfico de barras que contrasta el rendimiento de inicio entre los tres dispositivos evaluados. Los datos crudos correspondientes a cada una de las ejecuciones realizadas para los dispositivos OPPO Reno14 F, Xiaomi Redmi Note 10 Pro y Motorola Moto G15 se presentan en los Apéndices \ref{apc:oppo_startup_data}, \ref{apc:redmi_startup_data} y \ref{apc:moto_startup_data}, respectivamente.
 
             \paragraph{Cold Start (Arranque en frío)}
 
@@ -70,15 +52,9 @@
 
             Con el propósito de evaluar el comportamiento del aplicativo durante la navegación, se analizaron tres recorridos distintos desde la pantalla principal hasta las interfaces relacionadas con la configuración y ejecución de las actividades de realidad aumentada. Estas pruebas permiten comparar el desempeño del aplicativo en dispositivos con diferentes capacidades de hardware durante la carga y transición entre pantallas.
 
-            Para este análisis se emplearon dos métricas proporcionadas por la herramienta \textit{Macrobenchmark}: la duración de cuadro (\textit{Frame Duration}) y el sobrepaso de cuadro (\textit{Frame Overrun}).
+            Para este análisis se empleó como métrica de la herramienta \textit{Macrobenchmark} la duración de cuadro (\textit{Frame Duration}) con 10 iteraciones, la cual corresponde al tiempo, medido en milisegundos (ms), que requiere la CPU para procesar y renderizar cada cuadro durante la navegación entre pantallas. Los resultados se presentan mediante los percentiles P50, P90, P95 y P99, permitiendo comparar tanto el comportamiento habitual de la navegación como aquellos casos en los que se presentan los mayores tiempos de procesamiento.
 
-            \begin{itemize}
-                \item \textbf{Frame Duration (\textit{frameDurationCpuMs}):} corresponde al tiempo, medido en milisegundos, que requiere la CPU para procesar y renderizar cada cuadro durante la navegación entre pantallas.
-
-                \item \textbf{Frame Overrun (\textit{frameOverrunMs}):} representa la diferencia entre el tiempo requerido para procesar un cuadro y el tiempo disponible para mantener una frecuencia de actualización de 60 Hz. Valores positivos indican que el tiempo disponible fue excedido, mientras que valores negativos o iguales a cero indican que el procesamiento se realizó dentro del margen esperado.
-            \end{itemize}
-
-            Los resultados se presentan mediante los percentiles P50, P90, P95 y P99, permitiendo comparar tanto el comportamiento habitual de la navegación como aquellos casos en los que se presentan los mayores tiempos de procesamiento.
+            Los valores correspondientes a los percentiles P50, P90, P95 y P99 de cada recorrido se presentan en los Apéndices \ref{apc:moto_navigation_data}, \ref{apc:redmi_navigation_data} y \ref{apc:oppo_navigation_data} para los dispositivos Motorola Moto G15, Xiaomi Redmi Note 10 Pro y OPPO Reno14 F, respectivamente. En los tres dispositivos evaluados, la mediana (P50) de la duración de cuadro se mantuvo por debajo del umbral de 16,6 ms asociado a una frecuencia de actualización de 60 Hz en todos los recorridos de navegación, lo que evidencia un comportamiento fluido durante la navegación en condiciones normales de uso.
 
             \paragraph{Navegación hacia la sesión de realidad aumentada}
 
@@ -100,11 +76,13 @@
 
     \subsection{Pruebas de funcionamiento de las pantallas}
 
+        Con el propósito de verificar el correcto funcionamiento de las interfaces desarrolladas, se realizó una prueba de concepto sobre las pantallas que conforman el aplicativo. Estas pruebas permitieron comprobar la implementación de las funcionalidades previstas durante el diseño, validando la interacción con los diferentes componentes de la interfaz y el flujo del sistema ante las acciones realizadas.
+
         \subsubsection{Funcionamiento de las pantallas de información técnica}
 
             \paragraph{Pantalla de especificaciones}
 
-                En la Figura \ref{fig:func_specs} se muestra la capacidad de las tarjetas temáticas de la pantalla para editar su información mediante campos de texto, además de poder intercambiar la imagen de la propia máquina mediante el dialogo de edición.
+                En la Figura \ref{fig:func_specs} se muestra la capacidad de las tarjetas temáticas de la pantalla para editar su información mediante campos de texto, además de poder intercambiar la imagen de la propia máquina mediante el diálogo de edición.
 
                 \input{assets/figures/third_phase/functionalities/fig_func_specs.tex}
 
@@ -116,7 +94,7 @@
 
             \paragraph{Pantalla de actividades de mantenimiento}
 
-                En la Figura \ref{fig:func_activities} se muestra mediante el dialogo de actividades la capacidad de crear una nueva actividad de mantenimiento.
+                En la Figura \ref{fig:func_activities} se muestra mediante el diálogo de actividades la capacidad de crear una nueva actividad de mantenimiento.
 
                 \input{assets/figures/third_phase/functionalities/fig_func_activities.tex}
 
@@ -140,11 +118,11 @@
 
             \paragraph{Pantalla de editor de actividades de mantenimiento}
 
-                La Figura \ref{fig:func_steps} presenta el procedimiento para crear un paso dentro de una actividad de mantenimiento. En la parte inferior de la pantalla de edición de actividades se oprime el botón con ícono de “pasos” que permite observar los pasos existentes y crear uno nuevo en la opción “añadir paso”. Al oprimir, se abre un cuadro de dialogo donde asignar una imagen, nombre y descripción del paso correspondiente, habilitando posteriormente la configuración de animaciones mediante la creación de una nueva operación.
+                La Figura \ref{fig:func_steps} presenta el procedimiento para crear un paso dentro de una actividad de mantenimiento. En la parte inferior de la pantalla de edición de actividades se oprime el botón con ícono de “pasos” que permite observar los pasos existentes y crear uno nuevo en la opción “añadir paso”. Al oprimir, se abre un cuadro de diálogo donde asignar una imagen, nombre y descripción del paso correspondiente, habilitando posteriormente la configuración de animaciones mediante la creación de una nueva operación.
 
                 \input{assets/figures/third_phase/functionalities/fig_func_steps.tex}
 
-                Una vez creado el paso, el usuario puede definir las operaciones que describen el movimiento de los submodelos 3D. Como se muestra en la Figura \ref{fig:func_operations}, se selecciona las partes que participarán en la animación, junto a su tipo de operación (ver Tabla \ref{tab:operations}), el cual habilita diferentes casillas de parámetros para configurar el movimiento que ejecutará cada entidad del modelo tridimensional.
+                Una vez creado el paso, el usuario puede definir las operaciones que describen el movimiento de los submodelos 3D. Como se muestra en la Figura \ref{fig:func_operations}, se seleccionan las partes que participarán en la animación, junto a su tipo de operación (ver Tabla \ref{tab:operations}), el cual habilita diferentes casillas de parámetros para configurar el movimiento que ejecutará cada entidad del modelo tridimensional.
 
                 \input{assets/figures/third_phase/functionalities/fig_func_operations.tex}
 

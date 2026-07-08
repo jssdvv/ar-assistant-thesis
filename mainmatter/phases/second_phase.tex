@@ -131,11 +131,17 @@
 
         Para la exportación de los modelos tridimensionales se utilizó Blender como herramienta de procesamiento y generación de archivos en formato .glb bajo el estándar glTF. Su uso permitió mantener la unicidad en los nombres de cada pieza o submodelo durante el proceso de exportación, característica necesaria para la generación de identificadores hash asociados a las partes individuales de cada modelo 3D.
 
-    \subsection{Recursos externos}
+    \subsection{Formatos de los archivos}
 
-        \subsubsection{Formatos de los archivos}
+        Para garantizar la compatibilidad con las herramientas utilizadas y con el motor de renderizado de la aplicación, se usó el formato de transmisión de biblioteca de gráficos (.glTF) en su versión binaria (.glb), mientras que los formatos compatibles de imágenes fueron: .png, .jpeg, .jpg, .tiff y .webp.
 
-            Para garantizar la compatibilidad con las herramientas utilizadas y con el motor de renderizado de la aplicación, se usó el formato de transmisión de biblioteca de gráficos (.glTF) en su versión binaria (.glb), mientras que los formatos compatibles de imágenes fueron: .png, .jpeg, .jpg, .tiff y .webp.
+    \subsection{Descomposición de marcadores}
+
+        Los marcadores utilizados en el aplicativo fueron diseñados con base en códigos QR, generados y exportados directamente desde la propia aplicación. Cada marcador está asociado a una máquina y posición específica, permitiendo un número ilimitado de marcadores por máquina registrada.
+
+        Estructuralmente, cada marcador consiste en un rectángulo con un margen externo que organiza dos zonas: la parte superior contiene el código QR y la parte inferior su decodificación en texto, siguiendo la nomenclatura \textit{MxPy}, donde \textit{M} indica la máquina con su identificador numérico y \textit{P} indica la posición con su índice correspondiente, permitiendo distinguir múltiples marcadores asociados a una misma máquina (ver Figura \ref{fig:markers_decomposition}). Por ejemplo, \textit{M1P1} corresponde al primer marcador de la máquina con identificador 1 y posición con índice 1.
+
+        \input{assets/figures/second_phase/fig_markers_decomposition.tex}
 
     \subsection{Escena de realidad aumentada}
 
@@ -169,11 +175,15 @@
 
         La escena de realidad aumentada fue implementada mediante una arquitectura jerárquica de nodos encargada de administrar transformaciones espaciales, renderizado y manipulación de modelos tridimensionales. Esta estructura combinó nodos proporcionados por SceneView y ARCore junto a nodos personalizados, los cuales fueron desarrollados para resolver limitaciones de posicionamiento, selección y edición de submodelos dentro de la escena.
 
+        \subsubsection{Sistema de colores}
+
+            Se implementó un sistema de colores para representar los diferentes estados de los modelos tridimensionales durante la edición de actividades y su interacción en las animaciones. Como se muestra en la Figura \ref{fig:models_colors}, este sistema reemplaza todo material definido originalmente en los archivos \textit{.glb}, garantizando una representación visual uniforme y consistente de los estados de los modelos, independientemente de la máquina o del material asignado durante su proceso de modelado CAD.
+
+            \input{assets/figures/second_phase/fig_models_colors.tex}
+
         \subsubsection{Sistema de coordenadas de los nodos}
 
-            El sistema de coordenadas global corresponde al sistema principal de la escena de realidad aumentada. En contraste, cada nodo mantiene un sistema de coordenadas local definido respecto a su nodo padre, permitiendo aplicar transformaciones relativas dentro de la jerarquía de nodos sin alterar la estructura general de la escena.
-
-            Esta organización permitió conservar relaciones espaciales entre modelos y submodelos facilitando el posicionamiento de elementos dentro de la escena. La relación entre los sistemas de coordenadas globales y locales se muestra en la Figura \ref{fig:coordinate_system_comparison}.
+            El sistema de coordenadas global corresponde al espacio de referencia principal de la escena de realidad aumentada, sobre el cual se determina la posición absoluta de todos los elementos. En contraste, cada nodo define sus transformaciones de posición, rotación y escala mediante un sistema de coordenadas local, establecido con respecto a su nodo padre dentro de la jerarquía de la escena. Esta organización permitió conservar las relaciones espaciales entre nodos padre e hijo, de manera que las transformaciones aplicadas a un nodo padre se propagaran automáticamente a sus descendientes, mientras que los ajustes individuales pudieran realizarse modificando únicamente las coordenadas locales de cada nodo. La representación de los sistemas de coordenadas global y local se muestra en las Figura \ref{fig:coordinate_system_comparison}.
 
             \input{assets/figures/second_phase/coordinate_system/fig_coordinate_system_comparison.tex}
 
@@ -417,7 +427,7 @@
 
                 \input{assets/figures/second_phase/secondary_screen/fig_screen_editor_steps_list.tex}
 
-                Cada actividad se organiza en una serie de pasos, los cuales pueden contener una o varias operaciones encargadas de definir las animaciones de los submodelos seleccionados. Para ello el usuario deberá primero crear los pasos mediante el dialogo mostrado en la Figura \ref{fig:steps_dialog}, que habilitará la creación de operaciones que incorpora un panel inferior expandible, ilustrado en la Figura \ref{fig:operation_controls}, donde se seleccionará cuales submodelos serán animados de forma conjunta mediante su tipo de operacion: punto a punto, cilíndrica, junta y tornillo, cada una diseñada para representar diferentes comportamientos mecánicos.
+                Cada actividad se organiza en una serie de pasos, los cuales pueden contener una o varias operaciones encargadas de definir las animaciones de los submodelos seleccionados. Para ello el usuario deberá primero crear los pasos mediante el diálogo mostrado en la Figura \ref{fig:steps_dialog}, que habilitará la creación de operaciones que incorpora un panel inferior expandible, ilustrado en la Figura \ref{fig:operation_controls}, donde se seleccionará cuales submodelos serán animados de forma conjunta mediante su tipo de operación: punto a punto, cilíndrica, junta y tornillo, cada una diseñada para representar diferentes comportamientos mecánicos.
 
                 \input{assets/figures/second_phase/controls/fig_steps_dialog.tex}
 
