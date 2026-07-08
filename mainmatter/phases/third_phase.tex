@@ -23,10 +23,12 @@
             La Tabla \ref{tab:devices_specs} presenta las principales especificaciones técnicas de los dispositivos utilizados para la evaluación del aplicativo.
 
             \input{assets/tables/third_phase/tab_devices_specs.tex}
-
+            
         \subsubsection{Pruebas de tiempo de inicio (Startup)}
 
             El tiempo de inicio de una aplicación constituye uno de los principales indicadores de la experiencia de uso, ya que corresponde al tiempo que transcurre desde que el usuario solicita la apertura del aplicativo hasta que este se encuentra disponible para su utilización. Para evaluar este comportamiento, se realizaron pruebas en tres escenarios de arranque que representan diferentes estados del aplicativo dentro del sistema operativo Android.
+
+            De acuerdo con las recomendaciones de Android Vitals, un tiempo de inicio en frío igual o superior a 5 segundos se considera excesivo y puede afectar negativamente la experiencia del usuario. En este sentido, los tiempos de inicio obtenidos para el aplicativo se mantuvieron por debajo de este umbral en todos los dispositivos evaluados, evidenciando un desempeño adecuado durante el arranque de la aplicación \parencite{GOOGLE.VITALS:2026}.
 
             Para cada uno de estos tres escenarios, se ejecutaron diez iteraciones por dispositivo utilizando la herramienta \textit{Macrobenchmark} de Jetpack, registrando el tiempo total de inicio en milisegundos (ms) mediante la métrica \textit{StartupTimingMetric}. A partir de las mediciones obtenidas se calcularon los valores de tiempo mínimo, máximo y promedio, mediante un gráfico de barras que contrasta el rendimiento de inicio entre los tres dispositivos evaluados. Los datos crudos correspondientes a cada una de las ejecuciones realizadas para los dispositivos OPPO Reno14 F, Xiaomi Redmi Note 10 Pro y Motorola Moto G15 se presentan en los Apéndices \ref{apc:oppo_startup_data}, \ref{apc:redmi_startup_data} y \ref{apc:moto_startup_data}, respectivamente.
 
@@ -36,7 +38,7 @@
 
                 \input{assets/figures/third_phase/benchmark/fig_benchmark_startup_cold.tex}
 
-            \paragraph{Warm Start (Arranque templado)}
+            \paragraph{Warm Start (Arranque semicaliente)}
 
                 Corresponde al escenario en el que el proceso del aplicativo permanece activo en memoria, pero la actividad principal debe reconstruirse antes de mostrarse nuevamente al usuario. Debido a que el proceso ya existe, el tiempo de inicio es menor que en un arranque en frío. La comparación entre los dispositivos evaluados para este tipo de arranque se presenta en la Figura \ref{fig:benchmark_startup_warm}.
 
