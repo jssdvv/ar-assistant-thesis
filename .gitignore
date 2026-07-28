@@ -12,3 +12,4 @@
 *.fdb_latexmk
 *.synctex.gz
 build
+/renders.blend1
